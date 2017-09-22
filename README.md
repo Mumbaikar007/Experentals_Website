@@ -1,6 +1,8 @@
 # experentals
 
-Every thing is under construction ... I have copied bootstrap code for reference ...
+HomePage is under construction  ... I have copied bootstrap code for reference ...
+
+
 
 HomePage...
 
@@ -16,4 +18,6 @@ HomePage...
 
 Login ...
 
-![alt text](readmeImages/4.png)
+![alt text](readmeImages/login.png)
+
+![alt text](readmeImages/signUp.png)
