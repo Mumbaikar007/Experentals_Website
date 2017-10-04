@@ -14,64 +14,29 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 
 
-
+	<link rel="stylesheet" type="text/css" href="css/header.css">
 	<link rel="stylesheet" type="text/css" href="css/footer.css">
 
 	<style type="text/css">
 		
-
-		.topnav {
-			overflow: hidden;
-			background-color: #333;
-		}
-
-		.topnav a {
-			float: left;
-			display: block;
-			color: #f2f2f2;
-			text-align: center;
-			padding: 14px 16px;
-			text-decoration: none;
-			font-size: 17px;
-		}
-
-		.topnav a:hover {
-			background-color: #ddd;
-			color: black;
-		}
-
-		.topnav .icon {
-			display: none;
-		}
-
 		 img:hover{
 			box-shadow: 10px 10px gray
 			/*filter: alpha(opacity=50);*/
 		}
 
-		@media screen and (max-width: 600px) {
-			.topnav a:not(:first-child) {display: none;}
-				.topnav a.icon {
-				float: right;
-				display: block;
-			}
-		}
+		.parallax {
+		    /* The image used */
+		    background: url(images/homepage/background1.jpg) ;
 
-		@media screen and (max-width: 600px) {
-			.topnav.responsive {position: relative;}
-			.topnav.responsive .icon {
-			position: absolute;
-			right: 0;
-			top: 0;
-		}
-		.topnav.responsive a {
-			float: none;
-			display: block;
-			text-align: left;
-		}
+		    /* Set a specific height */
+		    height: 600px;
 
+		    /* Create the parallax scrolling effect */
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
 		}
-
 
 </style>
 
@@ -83,43 +48,56 @@
 </head>
 <body>
 
+
+	<!-- =========================HEADER==================================== -->
 	<header>
 		
-		<div class="topnav" id="myTopnav">
-			<a href="#home">Home</a>
-			<a href="#news">News</a>
-			<a href="#contact">Contact</a>
-			<a href="#about">About</a>
-			<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-			</div>
-
-		</div>
-
-		<script>
-			function myFunction() {
-				var x = document.getElementById("myTopnav");
-				if (x.className === "topnav") {
-				    x.className += " responsive";
-				} 
-				else {
-				    x.className = "topnav";
-				}
-			}
-		</script>
-
+		 <nav class="navbar navbar-inverse">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>                        
+		      </button>
+		      <a class="navbar-brand" href="#">Experentals</a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="myNavbar">
+		      <ul class="nav navbar-nav">
+		        <li><a href="#">Home</a></li>
+		        <li class="dropdown">
+		          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="#">Page 1-1</a></li>
+		            <li><a href="#">Page 1-2</a></li>
+		            <li><a href="#">Page 1-3</a></li>
+		          </ul>
+		        </li>
+		        <li><a href="#">Page 2</a></li>
+		        <li><a href="#">Page 3</a></li>
+		      </ul>
+		      <ul class="nav navbar-nav navbar-right">
+		        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+		        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
 
 	</header>
+	<!-- ================================HEADER ENDS============================ -->
+
 
 	<!-- ===================INTRODUCTION: LOGO AND MOTO STARTS==================== -->
-	<div class = "container-fluid">
+	<div class="parallax" style="margin-top: -20px;">
 		
-		<div align="center" style="background: url(images/homepage/background1.jpg) ; background-size: 100%;min-height: 500px;padding-top: 100px;">
+		<div align="center" style=" background-size: 100%;min-height: 500px;padding-top: 100px;">
 			
 			<!-- <img src="" alt="ExpeRentals LOGO"> -->
 
 			<p style="font-size: 100px;color: white;">Experentals </p>
 
-			<p style="color:white; font-size: 40px;"> ExpeRentals Moto</p>
+			<p style="color:white; font-size: 40px;"> Rentals for Experiments</p>
 
 		</div>
 
@@ -129,16 +107,22 @@
 
 
 	<!-- =========================CHOICE: RENTER OR LESSOR STARTS==================== -->
-	<div id = "RentOrLess" class="container" style="min-height: 500px;">
+	<div id = "RentOrLess" class="container-fluid" style="min-height: 500px; padding-top: 30px;">
 		
-		<div class="row">
+		<div style="width: 100%; height: 20px; border-bottom: 1px solid black; text-align: center">
+		  <span style="font-size: 40px; background-color: white; padding: 0 10px;">
+		   	What do you want to do ?  <!--Padding is optional-->
+		  </span>
+		</div>
 
-			<div class="col-lg-6 col-sm-12" style="text-align: center; padding-top: 100px;">
+		<div class="row" >
+
+			<div class="col-lg-6 col-sm-12 " style="text-align: center; padding-top: 100px;">
 				
 				<img src="images/homepage/lessor.jpg" alt="RENTER" width="300px" height="250px">
 
 			</div>
-			
+		
 
 			<div class="col-lg-6 col-sm-12" style="text-align: center; padding-top: 100px;">
 				
@@ -153,8 +137,14 @@
 
 
 	<!-- ==========================HOW IT WORKS STARTS============================== -->
-	<div class="container" style="min-height: 400px;background-color: lightgray;">
+	<div class="container" style="min-height: 400px;background-color: lightgray; padding-top: 30px;">
 		
+		<div style="width: 100%; height: 20px; border-bottom: 1px solid black; text-align: center">
+		  <span style="font-size: 40px; background-color: lightgray; padding: 0 10px;">
+		   	HOW IT WORKS <!--Padding is optional-->
+		  </span>
+		</div>
+
 		<p style="text-align: center;margin-top: 150px;s">HOW IT WORKS</p>
 
 
@@ -162,8 +152,16 @@
 	<!-- =======================HOW IT WORKS ENDS================================= -->
 
 	<!-- ==========================TOP RENTERS LESSOR STARTS============================== -->
-	<div class="container" style="margin-top: 100px;margin-bottom: 100px;">
+	<div class="container" style="margin-top: 50px;margin-bottom: 100px;">
 		
+		<div style="width: 100%; height: 20px; border-bottom: 1px solid black; text-align: center">
+		  <span style="font-size: 40px; background-color: white; padding: 0 10px;">
+		   	OUR ... <!--Padding is optional-->
+		  </span>
+		</div>
+
+		<br><br><br>
+
 		<div class="row">
 
 			<div class="col-lg-6 col-sm-12" >
@@ -202,7 +200,7 @@
 
 			<div class="col-lg-6 col-sm-12">
 				
-				<h2>Top Lessoors</h2>
+				<h2>Top Lessors</h2>
 
 				<table class="table table-hover">
 				    <thead>
@@ -242,9 +240,65 @@
 
 
 	<!-- ==========================ABOUT US STARTS============================== -->
-	<div class="container" style="background-color: lightgray;min-height: 400px;">
+	<div class="container" style="background-color: lightgray;min-height: 400px;padding: 20px 30px 50px 	0px;">
 		
-		<p style="text-align: center;margin-top: 150px;">About Us</p>
+		<div style="width: 100%; height: 20px; border-bottom: 1px solid black; text-align: center">
+		  <span style="font-size: 40px; background-color: white; padding: 0 10px;">
+		   	About Us <!--Padding is optional-->
+		  </span>
+		</div>
+
+		<br><br><br>
+		<div class="container">
+		  
+		  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+		    <!-- Indicators -->
+		    <ol class="carousel-indicators">
+		      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		      <li data-target="#myCarousel" data-slide-to="1"></li>
+		      <li data-target="#myCarousel" data-slide-to="2"></li>
+		    </ol>
+
+		    <!-- Wrapper for slides -->
+		    <div class="carousel-inner">
+
+		      <div class="item active">
+		        <img src="images/homepage/carousal/1.jpg" alt="Los Angeles"  style="width:100%;height: 500px;">
+		        <div class="carousel-caption">
+		          <h3>Los Angeles</h3>
+		          <p>We won </p>
+		        </div>
+		      </div>
+
+		      <div class="item">
+		        <img src="images/homepage/carousal/2.jpg" alt="Chicago" style="width:100%;height: 500px;">
+		        <div class="carousel-caption">
+		          <h3>Chicago</h3>
+		          <p></p>
+		        </div>
+		      </div>
+		    
+		      <div class="item">
+		        <img src="images/homepage/carousal/3.jpg" alt="New York"  style="width:100%;height: 500px;">
+		        <div class="carousel-caption">
+		          <h3>New York</h3>
+		          <p></p>
+		        </div>
+		      </div>
+		  
+		    </div>
+
+		    <!-- Left and right controls -->
+		    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+		      <span class="glyphicon glyphicon-chevron-left"></span>
+		      <span class="sr-only">Previous</span>
+		    </a>
+		    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+		      <span class="glyphicon glyphicon-chevron-right"></span>
+		      <span class="sr-only">Next</span>
+		    </a>
+		  </div>
+		</div>
 
 	</div>
 	<!-- =======================ABOUT US ENDS================================= -->
@@ -252,23 +306,23 @@
 
 
     <!--==================== Footer ===================-->
-    <div class = "container">
-    <footer class="footer-bs">
+    
+    <footer class="footerclass container">
         <div class="row">
-        	<div class="col-md-3 footer-brand animated fadeInLeft">
-            	<h2>Logo</h2>
-                <p>Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies. Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex mi ut sem.</p>
-                <p>© 2014 BS3 UI Kit, All rights reserved</p>
+        	<div class="col-md-4 right"  style="color: white;">
+            	<h2 >Experentals</h2>
+                <p>We facilitie low cost availability of equipments for sharing of electronics and hardware among people.Our system bridges those with surplus electronic equipments to those who require them.</p>
+                <p>All rights reserved</p>
             </div>
-        	<div class="col-md-4 footer-nav animated fadeInUp">
-            	<h4>Menu —</h4>
+        	<div class="col-md-4 right">
+            	<h4 >Quick Links</h4>
             	<div class="col-md-6">
                     <ul class="pages">
-                        <li><a href="#">Travel</a></li>
-                        <li><a href="#">Nature</a></li>
-                        <li><a href="#">Explores</a></li>
-                        <li><a href="#">Science</a></li>
-                        <li><a href="#">Advice</a></li>
+                        <li><a href="#">Lessor</a></li>
+                        <li><a href="#">Lessee</a></li>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">SignUp</a></li>
+                        <li><a href="#">History</a></li>
                     </ul>
                 </div>
             	<div class="col-md-6">
@@ -280,7 +334,7 @@
                     </ul>
                 </div>
             </div>
-        	<div class="col-md-2 footer-social animated fadeInDown">
+        	<div class="col-md-4 ">
             	<h4>Follow Us</h4>
             	<ul>
                 	<li><a href="#">Facebook</a></li>
@@ -289,21 +343,10 @@
                 	<li><a href="#">RSS</a></li>
                 </ul>
             </div>
-        	<div class="col-md-3 footer-ns animated fadeInRight">
-            	<h4>Newsletter</h4>
-                <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
-                <p>
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Search for...">
-                      <span class="input-group-btn">
-                        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
-                      </span>
-                    </div><!-- /input-group -->
-                 </p>
-            </div>
+        	
         </div>
     </footer>
-	</div>
+	
     <!-- ==============================FOOTER ENDS =========================== -->
 
 </body>
