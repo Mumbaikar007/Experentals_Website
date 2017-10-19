@@ -1,0 +1,37 @@
+@media screen and (max-width: 768px) {
+	.mobile-only{
+    	display: block;
+    }
+    .large-devices-only{
+    	display: none;
+    }
+    .parallax {
+        background-attachment: scroll;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .mobile-only{
+    	display: none;
+    }
+    .large-devices-only{
+    	display: block;
+    }
+    .parallax {
+	    /* The image used */
+	    
+
+	    /* Set a specific height */
+	    height: 600px;
+
+	    /* Create the parallax scrolling effect */
+	    background-attachment: fixed;
+
+	    background-position: center;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	}
+	.bg {
+		background-repeat:  no-repeat;background-size: cover;
+	}
+}
