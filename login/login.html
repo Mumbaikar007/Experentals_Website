@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html> 
 <head>
 	
 	<title>Login to Experentals</title>
@@ -244,13 +244,13 @@
 	  	<div class="tab-content">
 		
 		    <div id="LogIn" class="tab-pane fade in active">
-		    	 <form>
+		    	 <form action = "/experentals/login/logindb.php" method = "POST">
 
 				   <div class="form-group">
 				     <label >Username:</label>
 				     <div class="inner-addon left-addon">
 						<i class="glyphicon glyphicon-user"></i>
-						<input type="text" class="form-control" id="email" placeholder="UserName">
+						<input type="text" class="form-control" placeholder="UserName" name = "user">
 					</div>
 				   </div>
 
@@ -259,13 +259,13 @@
 				     <label >Password:</label>
 				     <div class="inner-addon left-addon">
 						<i class="glyphicon glyphicon-lock"></i>
-						<input type="password" class="form-control" id="pwd" placeholder="Password">
+						<input type="password" class="form-control" placeholder="Password" name = "pass">
 					</div>
 				   </div>
 				   <div class="checkbox" style="text-align: center;">
 				     <label><input type="checkbox"> Remember me</label>
 				   	 <br><br>
- 				   	 <button type="button" class="btn btn-primary btn-lg">Submit</button>
+ 				   	 <input type = "submit" name = "submit" class="btn btn-primary btn-lg">
  					</div>
  				</form>   	
 		    </div>
@@ -312,7 +312,7 @@
 				   </div>
 
 				   <div class="checkbox" style="text-align: center;">
-				   	 <button type="button" class="btn btn-primary btn-lg">Submit</button>
+				   	 <input type = "submit" name = "submit" class="btn btn-primary btn-lg">Submit</button>
  				   </div>
  				</form>
 			</div>
@@ -323,6 +323,13 @@
 	</div>
 	</div>
 	<!-- ======================TRYING ENDS==================== -->
+
+	<!-- =============== PHP =================== -->
+
+	  
+
+	<!-- ================== PHP ENDS ===============-->
+
 
   	<!-- ================BOOTSNIP STARTS================== -->
 

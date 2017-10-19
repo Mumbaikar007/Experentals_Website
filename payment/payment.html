@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Payment</title>
+
+<link rel="stylesheet" href="css/style.css">
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+div.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 30%;
+    height: 300px;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    /*border: 1px solid #ccc;*/
+    width: 70%;
+    border-left: none;
+    height: 300px;
+}
+</style>
+</head>
+<body>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+</div>
+
+<div id="London" class="tabcontent">
+  
+  <div class="container">
+    <div id="Checkout" class="inline">
+        <h1>Pay Invoice</h1>
+        <div class="card-row">
+            <span class="visa"></span>
+            <span class="mastercard"></span>
+            <span class="amex"></span>
+            <span class="discover"></span>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="PaymentAmount">Payment amount</label>
+                <div class="amount-placeholder">
+                    <span>$</span>
+                    <span>500.00</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label or="NameOnCard">Name on card</label>
+                <input id="NameOnCard" class="form-control" type="text" maxlength="255"></input>
+            </div>
+            <div class="form-group">
+                <label for="CreditCardNumber">Card number</label>
+                <input id="CreditCardNumber" class="null card-image form-control" type="text"></input>
+            </div>
+            <div class="expiry-date-group form-group">
+                <label for="ExpiryDate">Expiry date</label>
+                <input id="ExpiryDate" class="form-control" type="text" placeholder="MM / YY" maxlength="7"></input>
+            </div>
+            <div class="security-code-group form-group">
+                <label for="SecurityCode">Security code</label>
+                <div class="input-container" >
+                    <input id="SecurityCode" class="form-control" type="text" ></input>
+                    <i id="cvc" class="fa fa-question-circle"></i>
+                </div>
+                <div class="cvc-preview-container two-card hide">
+                    <div class="amex-cvc-preview"></div>
+                    <div class="visa-mc-dis-cvc-preview"></div>
+                </div>
+            </div>
+            <div class="zip-code-group form-group">
+                <label for="ZIPCode">ZIP/Postal code</label>
+                <div class="input-container">
+                    <input id="ZIPCode" class="form-control" type="text" maxlength="10"></input>
+                    <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Enter the ZIP/Postal code for your credit card billing address."><i class="fa fa-question-circle"></i></a>
+                </div>
+            </div>
+            <button id="PayButton" class="btn btn-block btn-success submit-button" type="submit">
+                <span class="submit-button-lock"></span>
+                <span class="align-middle">Pay $500.00</span>
+            </button><br /><br>
+            <b>NET BANKING:</b>
+            <ul>
+              <li><a href="https://infinity.icicibank.com/corp/AuthenticationController?FORMSGROUP_ID__=AuthenticationFG&__START_TRAN_FLAG__=Y&FG_BUTTONS__=LOAD&ACTION.LOAD=Y&AuthenticationFG.LOGIN_FLAG=1&BANK_ID=ICI">ICICI</a></li>
+              <li><a href="https://retail.onlinesbi.com/retail/login.htm">SBI</a></li>
+              <li><a href="https://retail.axisbank.co.in/wps/portal/rBanking/axisebanking/AxisRetailLogin/!ut/p/a1/04_Sj9CPykssy0xPLMnMz0vMAfGjzOKNAzxMjIwNjLwsQp0MDBw9PUOd3HwdDQwMjIEKIoEKDHAARwNC-sP1o_ArMYIqwGNFQW6EQaajoiIAVNL82A!!/dl5/d5/L2dBISEvZ0FBIS9nQSEh/">AXIS</a></li>
+              <li><a href="https://netbanking.hdfcbank.com/netbanking/?_ga=2.170182496.1946234194.1508090299-319934479.1508090299">HDFC</a></li>
+
+            </ul>
+            
+        </form>
+    </div>
+  </div>
+
+</div>
+
+<div id="Paris" class="tabcontent">
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p> 
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 
