@@ -51,15 +51,22 @@ if(!empty($_POST['user']) && !empty($_POST['pass'])) {
   
     $query=mysqli_query($con ,"SELECT * FROM login WHERE username='".$user."'");  
     $numrows=mysqli_num_rows($query);  
+    
     if($numrows==0)  
     {  
+    
+
     $sql="INSERT INTO login(username,password) VALUES('$user','$pass')";  
-  
     $result=mysqli_query($con ,$sql);  
-        if($result){  
-    echo "Account Successfully Created";  
+    
+
+
+
+    if($result){  
+        echo "Account Successfully Created"; 
+
     } else {  
-    echo "Failure!";  
+        echo "Failure!";  
     }  
   
     } else {  
