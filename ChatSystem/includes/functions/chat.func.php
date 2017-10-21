@@ -12,7 +12,7 @@
 		$db_name = 'chat';
 		$connection = mysqli_connect($db_host, $db_user, $db_pass );
 
-		$query = "SELECT Sender, Message FROM `chat`.`chat`"; //ORDER BY Msg_ID DESC
+		$query = "SELECT Sender, Receiver, Message FROM `chat`.`chat`"; //ORDER BY Msg_ID DESC
 
 		$run = mysqli_query($connection,$query);
 
@@ -43,6 +43,7 @@
 		while ( $row = mysqli_fetch_assoc($run)){
  
 			$messages[] = array ( "sender" => $row ['Sender'],
+								  "receiver" => $row ['Receiver'],
 								  "message"=> $row ['Message']
 			);
 
@@ -52,7 +53,7 @@
 
 	}
 
-	function send_msg( $sender, $message){
+	function send_msg( $sender, $receiver, $message){
 		
 		$db_host = 'localhost';
 		$db_user = 'root';
@@ -65,15 +66,16 @@
 		if (!empty($sender) && !empty($message)) {
 
 			$sender  = mysqli_real_escape_string($connection, $sender);
+			
 			$message = mysqli_real_escape_string($connection, $message);
 
-			$query = "INSERT INTO `chat`.`chat`(Sender, Message) VALUES ( '$sender', '$message' )" ;
+			$query = "INSERT INTO chat.chat(Sender,Receiver, Message) VALUES ( '" .$sender. "', ' ".$receiver. "', '" .$message. "')" ;
 
 			if ( $run = mysqli_query($connection,$query)){
 				return true;
 			}
 			else {
-				echo "string";
+				//echo "string";
 
 				return false;
 			}

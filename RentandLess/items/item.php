@@ -70,7 +70,10 @@
 
   	<?php  
 
-  		echo '
+        session_start();
+        $_SESSION['talkto'] = $_GET['RName'];
+  	   	
+      echo '
   		<div class = "col-lg-4"></div>
   		<div class ="col-lg-4" style="text-align:center;">
 			<div class="card__one">
@@ -90,13 +93,15 @@
 	      </div>
 	      </div>
 		  <div>
-		  	<a href=" ">
+		  	<a href="../../ChatSystem/index.php">
 		  	<button type="button" class="btn btn-primary btn-block">Chat with '. $_GET['RName'].'</button>
 		  	</a>
 		  </div>
 
 	    </div>
 		<div class = "col-lg-4"></div>';
+
+
 
   	?>
 

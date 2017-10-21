@@ -22,10 +22,10 @@
 		    if($user == $dbusername && $pass == $dbpassword)  
 		    {  
 		    session_start();  
-		    $_SESSION['sess_user']=$user;  
+		    $_SESSION['sess_user']= $user;  
 		  
 		    /* Redirect browser */  
-		    header("Location: member.php");  
+		    header("Location: ../RentandLess/searchAnItem.php");  
 		    }  
 		    } else {  
 		    echo "Invalid username or password!";  

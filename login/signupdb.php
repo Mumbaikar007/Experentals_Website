@@ -10,8 +10,21 @@
             $numrows=mysqli_num_rows($query);  
             if($numrows==0)  
             {  
+            
+            $array = array();
+            $string = serialize($array);
+            $sql2="INSERT INTO chatTo(name, other) VALUES ('$user','$string')";
+            $result2 = mysqli_query($con ,$sql2); 
+            if ($result2){
+                echo "done";
+            }
+            else{
+                echo "ABE yaar";
+            }
+
             $sql="INSERT INTO login(username,password) VALUES('$user','$pass')";  
-          
+            
+            
             $result=mysqli_query($con ,$sql);  
                 if($result){  
             echo "Account Successfully Created";
