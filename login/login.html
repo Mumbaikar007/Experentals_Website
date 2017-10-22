@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	if (!isset($_SESSION['sess_user']))
+ 		header("Location: ../finalindex.html");
+?>
+
+
 <!DOCTYPE html>
 <html> 
 <head>
@@ -186,14 +193,53 @@
 				  		
 		function validateForm() {
 		    
+		    var username = document.getElementById("user");
 		    var password = document.getElementById("pwd");
 		    var cpassword = document.getElementById("conpwd");
 		    
+		    if (username.value == "" ){
+		    	alert("UserName cannot be empty !!");
+		    }
+
+		    var paswd=  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;  
+			if(password.value.match(paswd))   
+			{    
+				  
+			}  
+			else  
+			{   
+				alert('password between 7 to 15 characters which contain at least one numeric digit and a special character!')  
+				password.focus();
+			} 
+
 		    if ( password.value != cpassword.value) {
 		        alert("Password should be same !!");
 				cpassword.focus();		        
-		        return false;
+		        
 		    }
+
+		    return false;
+		}
+
+		function validateForm2() {
+		    
+		    var username = document.getElementById("user");
+		    var password = document.getElementById("pass");
+		    
+		    if (username.value == "" ){
+		    	alert("UserName cannot be empty !!");
+		    }
+
+		    var paswd=  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;  
+			if(password.value.match(paswd)) {}  
+			
+			else {   
+				
+				alert('password between 7 to 15 characters which contain at least one numeric digit and a special character!')  
+				password.focus();
+			} 
+			
+		    return true;
 		}
 
 	</script>
@@ -271,7 +317,7 @@
 	  	<div class="tab-content">
 		
 		    <div id="LogIn" class="tab-pane fade in active">
-		    	 <form action = "/experentals/login/logindb.php" method = "POST">
+		    	 <form action = "/experentals/login/logindb.php" method = "POST" onsubmit="return validateForm2()">
 
 				   <div class="form-group">
 				     <label >Username:</label>
