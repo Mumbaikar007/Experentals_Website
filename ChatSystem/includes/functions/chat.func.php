@@ -69,7 +69,7 @@
 			
 			$message = mysqli_real_escape_string($connection, $message);
 
-			$query = "INSERT INTO chat.chat(Sender,Receiver, Message) VALUES ( '" .$sender. "', ' ".$receiver. "', '" .$message. "')" ;
+			$query = "INSERT INTO chat.chat(Sender,Receiver, Message) VALUES ( '".$sender."', '".$receiver. "', '" .$message. "')" ;
 
 			if ( $run = mysqli_query($connection,$query)){
 				return true;
