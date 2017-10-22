@@ -93,7 +93,7 @@
 	      </div>
 	      </div>
 		  <div>
-		  	<a href="../../ChatSystem/index.php">
+		  	<a href="../../ChatSystem/thechat.php?talkto='.$_GET['RName'].'">
 		  	<button type="button" class="btn btn-primary btn-block">Chat with '. $_GET['RName'].'</button>
 		  	</a>
 		  </div>
