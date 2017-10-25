@@ -22,7 +22,8 @@
 		    if($user == $dbusername && $pass == $dbpassword)  
 		    {  
 		    session_start();  
-		    $_SESSION['sess_user']= $user;  
+		    $_SESSION['sess_user']= $user;
+		    $_SESSION['talkto'] =  $user;
 		  
 		    /* Redirect browser */  
 		    header("Location: ../RentandLess/searchAnItem.php");  

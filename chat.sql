@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 19, 2017 at 05:05 PM
+-- Generation Time: Oct 25, 2017 at 06:33 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -31,6 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `chat` (
   `Msg_ID` int(11) NOT NULL,
   `Sender` varchar(100) NOT NULL,
+  `Receiver` varchar(20) NOT NULL,
   `Message` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -38,9 +39,23 @@ CREATE TABLE `chat` (
 -- Dumping data for table `chat`
 --
 
-INSERT INTO `chat` (`Msg_ID`, `Sender`, `Message`) VALUES
-(1, 'First', 'messafe'),
-(2, 'Second', 'message');
+INSERT INTO `chat` (`Msg_ID`, `Sender`, `Receiver`, `Message`) VALUES
+(23, 'ABCD', 'ABCDE', 'Hey i neel your Rasp Pi'),
+(24, 'ABCD', 'ABCDE', 'I am ready to pay 1500/-'),
+(25, 'ABCDE', 'ABCD', 'Okk'),
+(26, 'ABCD', 'ABCDE', 'I am ready to pay 1500/-'),
+(27, 'ABCD', 'ABCDE', 'aaye');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chatTo`
+--
+
+CREATE TABLE `chatTo` (
+  `name` varchar(20) NOT NULL,
+  `chatting_with` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
@@ -60,7 +75,7 @@ ALTER TABLE `chat`
 -- AUTO_INCREMENT for table `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `Msg_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
+  MODIFY `Msg_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
