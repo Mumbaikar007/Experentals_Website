@@ -2,10 +2,10 @@
 -- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 19, 2017 at 11:29 AM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.8
+-- Host: localhost
+-- Generation Time: Oct 25, 2017 at 06:33 PM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -39,6 +39,26 @@ CREATE TABLE `bid` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `chatTo`
+--
+
+CREATE TABLE `chatTo` (
+  `name` varchar(20) NOT NULL,
+  `other` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `chatTo`
+--
+
+INSERT INTO `chatTo` (`name`, `other`) VALUES
+('ABCD', 'a:1:{i:0;s:5:\"ABCDE\";}'),
+('ABCDE', 'a:3:{i:0;s:4:\"ABCD\";i:1;N;i:2;N;}'),
+('AAAA', 'a:0:{}');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `login`
 --
 
@@ -53,9 +73,11 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`pid`, `username`, `password`) VALUES
+(11, 'AAAA', '1111'),
+(9, 'ABCD', '1234'),
+(10, 'ABCDE', '12345'),
 (1, 'adarsh', 'adarsh'),
-(2, 'Pradnya_Pradhan', 'pradnya'),
-(3, 'pranav', 'puranik');
+(2, 'Pradnya_Pradhan', 'pradnya');
 
 -- --------------------------------------------------------
 
@@ -103,8 +125,20 @@ CREATE TABLE `rent` (
   `description` varchar(200) NOT NULL,
   `image` varchar(200) NOT NULL,
   `price` int(30) NOT NULL,
-  `avail_bids` int(30) NOT NULL
+  `avail_bids` int(30) NOT NULL,
+  `location` varchar(15) NOT NULL,
+  `renter_name` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rent`
+--
+
+INSERT INTO `rent` (`pid`, `rent_id`, `title`, `category`, `description`, `image`, `price`, `avail_bids`, `location`, `renter_name`) VALUES
+(1, 4, 'Rasp0', 'IOT', 'Microcontroller', 'bitmap', 2000, 2, 'Mumbai', 'ABCDE'),
+(1, 5, 'Rasp1', 'IOT', 'Microcontroller', 'bitmap', 2500, 2, 'Mumbai', 'adarsh'),
+(1, 6, 'Rasp2', 'IOT', 'Microcontroller', 'bitmap', 2500, 2, 'Borivali', 'adarsh'),
+(1, 7, 'Rasp3', 'IOT', 'Microcontroller', 'bitmap', 2500, 2, 'Andheri', 'AAAA');
 
 -- --------------------------------------------------------
 
@@ -184,7 +218,7 @@ ALTER TABLE `bid`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `payment`
 --
@@ -199,7 +233,7 @@ ALTER TABLE `profile`
 -- AUTO_INCREMENT for table `rent`
 --
 ALTER TABLE `rent`
-  MODIFY `rent_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `rent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `search`
 --
