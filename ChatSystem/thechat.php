@@ -12,14 +12,14 @@
   */
 
   if (isset($_GET['talkto'])){
-    if ( $_GET['talkto'] != $_SESSION['sess_user'] ){
+    if ( $_GET['talkto'] != $_GET['login'] ){
       //echo $_SESSION['talkto'];
     //function addToChatList( ){
         
         $con=mysqli_connect('localhost','root','') or die(mysqli_error());  
         mysqli_select_db($con, 'escrow') or die("cannot select DB");  
         
-        $query=mysqli_query($con ,"SELECT other FROM chatTo WHERE name='".$_SESSION['sess_user']."'"); 
+        $query=mysqli_query($con ,"SELECT other FROM chatTo WHERE name='".$_GET['login']."'"); 
         $query2=mysqli_query($con ,"SELECT other FROM chatTo WHERE name='".$_GET['talkto']."'");
         
         $row =  (mysqli_fetch_assoc($query));
@@ -44,7 +44,7 @@
         if ($neverTalked == 1){
 
           $array [] = ($_GET['talkto']);
-          $array2 [] = ($_SESSION['sess_user']);
+          $array2 [] = ($_GET['login']);
         }
 
         //array to string
@@ -54,7 +54,7 @@
         echo $array2;
         
 
-        $query=mysqli_query($con ,"UPDATE chatTo SET other='".$array."' WHERE name='".$_SESSION['sess_user']."'");
+        $query=mysqli_query($con ,"UPDATE chatTo SET other='".$array."' WHERE name='".$_GET['login']."'");
         $query=mysqli_query($con ,"UPDATE chatTo SET other='".$array2."' WHERE name='".$_GET['talkto']."'");
 
         /*if ($query){
@@ -72,7 +72,7 @@
   
   if(isset($_GET['send'])) {
     //echo "1<br>";
-    if (send_msg( $_SESSION['sess_user'], $_GET['talkto'], $_GET['message'] ) )
+    if (send_msg( $_GET['login'], $_GET['talkto'], $_GET['message'] ) )
     {
       echo 'Message Sent';
 
@@ -102,7 +102,9 @@
 
 <style>
 * {box-sizing: border-box}
-body {font-family: "Lato", sans-serif;}
+body {font-family: "Lato", sans-serif;
+	
+}
 
 /* Style the tab */
 div.tab {
@@ -147,11 +149,62 @@ div.tab button.active {
     width: 70%;
     border-left: none;
     height: 400px;
+    background-color: #fff;
     
 }
+
+ /* Chat containers */
+.ccontainer {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* Darker chat container */
+.darker {
+    border-color: #ccc;
+    background-color: #ddd;
+}
+
+/* Clear floats */
+.ccontainer::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Style images */
+.ccontainer img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+/* Style the right image */
+.ccontainer img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right:0;
+}
+
+/* Style time text */
+.time-right {
+    float: right;
+    color: #aaa;
+}
+
+/* Style time text */
+.time-left {
+    float: left;
+    color: #999;
+} 
 </style>
 </head>
-<body style="background-image: radial-gradient(circle, #3241a6 0, #202a6b 120%);">
+<body style = "background-image: radial-gradient(circle, #3241a6 0, #202a6b 120%);">
 
   <!-- ================= HEADER ============== -->
 
@@ -208,7 +261,7 @@ div.tab button.active {
         
 
         //Querying the list of people this nigga is talking to (from chat to database)
-        $query=mysqli_query($con ,"SELECT other FROM chatTo WHERE name='".$_SESSION['sess_user']."'"); 
+        $query=mysqli_query($con ,"SELECT other FROM chatTo WHERE name='".$_GET['login']."'"); 
         $row =  (mysqli_fetch_assoc($query));
         $array = unserialize($row['other']);
 
@@ -234,6 +287,9 @@ div.tab button.active {
 
       // retrieving all messages
       $messages =  get_msg();
+
+
+      date_default_timezone_set("Asia/Kolkata");
 
       /*  echo gettype($messages);*/
 
@@ -264,17 +320,36 @@ div.tab button.active {
 
             /*echo var_dump($message['sender']) . " " , var_dump($_SESSION['talkto']). " ". var_dump($_SESSION['sess_user']). " <br> ";*/
 
-            //Show Left
-            if ( !strcmp( $message['sender'], $i) && !strcmp( $message['receiver'], $_SESSION['sess_user']) ){
+          
 
-              echo '<p><strong>'.$message['sender'].': <br></strong>';
-              echo $message['message'].'<br><br></p>';
+          
+
+
+
+            //Show Left
+            if ( !strcmp( $message['sender'], $i) && !strcmp( $message['receiver'], $_GET['login']) ){
+
+            echo '
+            <div class="ccontainer">
+              <img src="../images/him.jpeg" alt="Avatar">
+              <p><strong>'.$message['sender'].': <br></strong>
+              '.$message['message'].'</p>
+              <span class="time-right">'.date("h:i:sa").'</span>
+            </div>';
             }
             
             //Show Right
-            else if ( !strcmp( $message['sender'], $_SESSION['sess_user']) && !strcmp( $message['receiver'], $i) ){
-              echo '<p style = "text-align: right;"><strong>'.$message['sender'].': <br></strong>';
-              echo $message['message'].'<br><br></p>';
+            else if ( !strcmp( $message['sender'], $_GET['login']) && !strcmp( $message['receiver'], $i) ){
+            
+            echo '
+            <div class="ccontainer darker">
+              <img src="../images/you.jpeg" alt="Avatar" class="right">
+              <p><strong>'.$message['sender'].': <br></strong>
+              '.$message['message'].'</p>
+              <span class="time-left">'.date("h:i:sa").'</span>
+            </div>
+            ';
+
             }
           }
         }
@@ -286,6 +361,7 @@ div.tab button.active {
         <form action="thechat.php?" method = "GET" > 
           
             <div style="display: none;"><label><input type="text" name="talkto" value = "'.$i.'"></label></div>
+            <div style="display: none;"><label><input type="text" name="login" value = "'.$_GET['login'].'"></label></div>
             <div class = "col-lg-9 col-xs-12"><label><input type="text" name="message" placeholder="Enter Message" width = "100%"></label></div>
             <div class="col-lg-3 col-xs-12" style= "text-align: right;"><input type="submit" name="send" value="Send Message"></div>
         
