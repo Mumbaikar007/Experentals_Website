@@ -12,14 +12,14 @@
   */
 
   if (isset($_GET['talkto'])){
-    if ( $_GET['talkto'] != $_GET['login'] ){
+    if ( $_GET['talkto'] != $_SESSION['sess_user'] ){
       //echo $_SESSION['talkto'];
     //function addToChatList( ){
         
         $con=mysqli_connect('localhost','root','') or die(mysqli_error());  
         mysqli_select_db($con, 'escrow') or die("cannot select DB");  
         
-        $query=mysqli_query($con ,"SELECT other FROM chatTo WHERE name='".$_GET['login']."'"); 
+        $query=mysqli_query($con ,"SELECT other FROM chatTo WHERE name='".$_SESSION['sess_user']."'"); 
         $query2=mysqli_query($con ,"SELECT other FROM chatTo WHERE name='".$_GET['talkto']."'");
         
         $row =  (mysqli_fetch_assoc($query));
@@ -44,7 +44,7 @@
         if ($neverTalked == 1){
 
           $array [] = ($_GET['talkto']);
-          $array2 [] = ($_GET['login']);
+          $array2 [] = ($_SESSION['sess_user']);
         }
 
         //array to string
@@ -54,7 +54,7 @@
         echo $array2;
         
 
-        $query=mysqli_query($con ,"UPDATE chatTo SET other='".$array."' WHERE name='".$_GET['login']."'");
+        $query=mysqli_query($con ,"UPDATE chatTo SET other='".$array."' WHERE name='".$_SESSION['sess_user']."'");
         $query=mysqli_query($con ,"UPDATE chatTo SET other='".$array2."' WHERE name='".$_GET['talkto']."'");
 
         /*if ($query){
@@ -72,7 +72,7 @@
   
   if(isset($_GET['send'])) {
     //echo "1<br>";
-    if (send_msg( $_GET['login'], $_GET['talkto'], $_GET['message'] ) )
+    if (send_msg( $_SESSION['sess_user'], $_GET['talkto'], $_GET['message'] ) )
     {
       echo 'Message Sent';
 
@@ -206,7 +206,7 @@ div.tab button.active {
 </head>
 <body style = "background-image: radial-gradient(circle, #3241a6 0, #202a6b 120%);">
 
-  <!-- =========================HEADER==================================== -->
+   <!-- =========================HEADER==================================== -->
   <header >
     
     <!--  <nav class="navbar navbar-inverse">
@@ -250,11 +250,13 @@ div.tab button.active {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
           </button>
-          <a class="navbar-brand" href="../finalindex.php">ExpeRentals</a>
+          <a class="navbar-brand" href="#">ExpeRentals</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="../finalindex.php">Home</a></li>
+            <li class="active"><a href="../finalindex.html">Home</a></li>
+            <li><a href="../RentandLess/searchAnItem.php">Search An Item</a></li>
+            <li><a href="../RentandLess/putAd.php">Rent An Item</a></li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -266,14 +268,15 @@ div.tab button.active {
                 
               </ul>
             </li>
-            <li><a href="../RentandLess/searchAnItem.php">Search An Item</a></li>
+            
             <li><a href="#"></a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
 
+            <li><a href="../ChatSystem/thechat.php">Chat</a></li>
             <li><a href="../login/login.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-              <li><a href="../login/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-              <!-- <li style="color: white;margin-top: 11px;">Search : <input type="text" name="search" value="Type a keyword" style="color: black;"> --> ';
+            <li><a href="../login/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <!-- <li style="color: white;margin-top: 11px;">Search : <input type="text" name="search" value="Type a keyword" style="color: black;"> --> ';
 
 
             <?php
@@ -283,15 +286,15 @@ div.tab button.active {
             if ( isset($_SESSION['lllog']) ){
               
               echo '
-              <li><a href="../login/login.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-              <li><a href="../login/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <li><a href="login/login.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a href="login/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
               <!-- <li style="color: white;margin-top: 11px;">Search : <input type="text" name="search" value="Type a keyword" style="color: black;"> --> ';
             }
 
             else {
               echo '
               
-              <li><a href="../login/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+              <li><a href="login/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
               <!-- <li style="color: white;margin-top: 11px;">Search : <input type="text" name="search" value="Type a keyword" style="color: black;"> --> ';
             }
 */
@@ -305,6 +308,7 @@ div.tab button.active {
 
   </header>
   <!-- ================================HEADER ENDS============================ -->
+
 
 
 <div class="container" style="margin-top: 100px;margin-bottom: 25px;">
@@ -322,11 +326,11 @@ div.tab button.active {
         
 
         //Querying the list of people this nigga is talking to (from chat to database)
-        $query=mysqli_query($con ,"SELECT other FROM chatTo WHERE name='".$_GET['login']."'"); 
+        $query=mysqli_query($con ,"SELECT other FROM chatTo WHERE name='".$_SESSION['sess_user']."'"); 
         $row =  (mysqli_fetch_assoc($query));
         $array = unserialize($row['other']);
 
-
+        //var_dump($array);
 
         // displaying list on left side of chatbox
         foreach ($array as $i) {
@@ -388,7 +392,7 @@ div.tab button.active {
 
 
             //Show Left
-            if ( !strcmp( $message['sender'], $i) && !strcmp( $message['receiver'], $_GET['login']) ){
+            if ( !strcmp( $message['sender'], $i) && !strcmp( $message['receiver'], $_SESSION['sess_user']) ){
 
             echo '
             <div class="ccontainer">
@@ -400,7 +404,7 @@ div.tab button.active {
             }
             
             //Show Right
-            else if ( !strcmp( $message['sender'], $_GET['login']) && !strcmp( $message['receiver'], $i) ){
+            else if ( !strcmp( $message['sender'], $_SESSION['sess_user']) && !strcmp( $message['receiver'], $i) ){
             
             echo '
             <div class="ccontainer darker">
@@ -422,7 +426,7 @@ div.tab button.active {
         <form action="thechat.php?" method = "GET" > 
           
             <div style="display: none;"><label><input type="text" name="talkto" value = "'.$i.'"></label></div>
-            <div style="display: none;"><label><input type="text" name="login" value = "'.$_GET['login'].'"></label></div>
+            
             <div class = "col-lg-9 col-xs-12"><label><input type="text" name="message" placeholder="Enter Message" width = "100%"></label></div>
             <div class="col-lg-3 col-xs-12" style= "text-align: right;"><input type="submit" name="send" value="Send Message"></div>
         

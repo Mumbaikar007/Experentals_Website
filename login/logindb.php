@@ -27,7 +27,7 @@
 		    $_SESSION['talkto'] =  $user;
 		  
 		    /* Redirect browser */  
-		    header("Location: ../RentandLess/searchAnItem.php");  
+		    header("Location: ../finalindex.php");  
 		    }  
 		    } else {  
 		    echo "Invalid username or password!";  

@@ -1,37 +1,32 @@
 <?php 
+	
+	session_start();
+	
+	if(isset($_POST["submit"])){  
+		  
+	  		
+		    
+		    $con=mysqli_connect('localhost','root','') or die(mysqli_error());  
+		    mysqli_select_db($con, 'escrow') or die("cannot select DB");  
+		  
+		    $title = $_POST['title'];
+		    $category = $_POST['category'];
+		    $description = $_POST['description'];
+		    $price = $_POST['price'];
 
-	function send_msg( $sender, $message){
-		
-		$db_host = 'localhost';
-		$db_user = 'root';
-		$db_pass = '';
 
-
-		$db_name = 'chat';
-		$connection = mysqli_connect($db_host, $db_user, $db_pass );
-
-		if (!empty($sender) && !empty($message)) {
-
-			$sender  = mysqli_real_escape_string($connection, $sender);
-			$message = mysqli_real_escape_string($connection, $message);
-
-			$query = "INSERT INTO `chat`.`chat`(Sender, Message) VALUES ( '$sender', '$message' )" ;
-
-			if ( $run = mysqli_query($connection,$query)){
-				return true;
+		    $query = "INSERT INTO `escrow`.`rent`(pid, title, category, description, price, location, renter_name) VALUES ( 1, '".$_POST['title']."', '".$_POST['category']."', '".$_POST['description']."', '".$_POST['price']."', '".$_POST['location']."', '".$_SESSION['sess_user']."')" ;
+  
+		    if ( $run = mysqli_query($con,$query)){
+				echo "DONE";//header("Location: ")
 			}
 			else {
-				echo "string";
+				//echo "string";
 
 				return false;
 			}
 
-		}
-		else {
-			return false;
-		}
-
-
+		
 	}
 
 ?>

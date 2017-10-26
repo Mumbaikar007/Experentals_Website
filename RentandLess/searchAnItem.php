@@ -87,7 +87,7 @@
 <body>
 		
 		
-	<!-- =========================HEADER==================================== -->
+  <!-- =========================HEADER==================================== -->
   <header >
     
     <!--  <nav class="navbar navbar-inverse">
@@ -131,11 +131,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
           </button>
-          <a class="navbar-brand" href="../finalindex.php">ExpeRentals</a>
+          <a class="navbar-brand" href="#">ExpeRentals</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="../finalindex.php">Home</a></li>
+            <li class="active"><a href="../finalindex.html">Home</a></li>
+            <li><a href="../RentandLess/searchAnItem.php">Search An Item</a></li>
+            <li><a href="../RentandLess/putAd.php">Rent An Item</a></li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -147,14 +149,15 @@
                 
               </ul>
             </li>
-            <li><a href="../RentandLess/searchAnItem.php">Search An Item</a></li>
+            
             <li><a href="#"></a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
 
+            <li><a href="../ChatSystem/thechat.php">Chat</a></li>
             <li><a href="../login/login.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-              <li><a href="../login/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-              <!-- <li style="color: white;margin-top: 11px;">Search : <input type="text" name="search" value="Type a keyword" style="color: black;"> --> ';
+            <li><a href="../login/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <!-- <li style="color: white;margin-top: 11px;">Search : <input type="text" name="search" value="Type a keyword" style="color: black;"> --> ';
 
 
             <?php
@@ -164,15 +167,15 @@
             if ( isset($_SESSION['lllog']) ){
               
               echo '
-              <li><a href="../login/login.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-              <li><a href="../login/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <li><a href="login/login.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a href="login/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
               <!-- <li style="color: white;margin-top: 11px;">Search : <input type="text" name="search" value="Type a keyword" style="color: black;"> --> ';
             }
 
             else {
               echo '
               
-              <li><a href="../login/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+              <li><a href="login/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
               <!-- <li style="color: white;margin-top: 11px;">Search : <input type="text" name="search" value="Type a keyword" style="color: black;"> --> ';
             }
 */
