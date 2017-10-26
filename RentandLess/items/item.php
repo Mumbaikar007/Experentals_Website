@@ -64,7 +64,7 @@
   </header>
   <!-- ================================  HEADER ENDS ============================ -->
 
-  <div class="container-fluid" style="text-align: center;">
+  <div class="container-fluid" style="text-align: center;margin-top: 100px;">
   	
 
 
@@ -90,13 +90,19 @@
 	          </b></p>
 	        </div>
 	        <div class="space-ten"></div>
+	      
+          <div>
+            <a href="../../ChatSystem/thechat.php?talkto='.$_GET['RName'].'&login='.$_SESSION['sess_user'].'">
+            <button type="button" class="btn btn-primary btn-block">Chat with '. $_GET['RName'].'</button>
+            </a>
+          </div>
+
+          <br>
+          <div class="space-ten"></div>
+
+        </div>
 	      </div>
-	      </div>
-		  <div>
-		  	<a href="../../ChatSystem/thechat.php?talkto='.$_GET['RName'].'&login='.$_SESSION['sess_user'].'">
-		  	<button type="button" class="btn btn-primary btn-block">Chat with '. $_GET['RName'].'</button>
-		  	</a>
-		  </div>
+		  
 
 	    </div>
 		<div class = "col-lg-4"></div>';

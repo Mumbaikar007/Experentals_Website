@@ -22,6 +22,7 @@
 		    if($user == $dbusername && $pass == $dbpassword)  
 		    {  
 		    session_start();  
+		    $_SESSION['lllog'] = true;
 		    $_SESSION['sess_user']= $user;
 		    $_SESSION['talkto'] =  $user;
 		  
