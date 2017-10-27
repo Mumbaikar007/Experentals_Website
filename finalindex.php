@@ -239,12 +239,12 @@
       
       <!-- <img src="" alt="ExpeRentals LOGO"> -->
 
-      <p  class="large-devices-only" style="font-size: 100px;color: white;">Experentals </p>
+      <p  class="large-devices-only" style="font-size: 100px;color: white;font-family: Georgia, serif;">Experentals </p>
 
-      <p  class="mobile-only" style="font-size: 50px;color: white;">Experentals</p>
+      <p  class="mobile-only" style="font-size: 50px;color: white;font-family: Georgia, serif;">Experentals</p>
 
-      <p style="color:white; font-size: 30px;"> Rentals for Experiments</p><br />
-      <p style="color: white;font-size: 18px;">We facilitie low cost availability of equipments for sharing of electronics and hardware among people.<br />Our system bridges those with surplus electronic equipments to those who require them.</p>
+      <p style="color:white; font-size: 30px;font-family: Georgia, serif;"> Rentals for Experiments</p><br />
+      <!-- <p style="color: white;font-size: 18px;">We facilitie low cost availability of equipments for sharing of electronics and hardware among people.<br />Our system bridges those with surplus electronic equipments to those who require them.</p> -->
 
     </div>
 
@@ -265,7 +265,7 @@
 
       <div class="col-lg-4 col-xs-12 " style=" padding-top: 40px;text-align: right;">
         
-        <a href="">
+        <a href="RentandLess/putAd.php">
           <img class = "abc img-responsive mobile-only center " src="images/homepage/lessor.png" alt="RENTER" width="300px" height="250px" align="center">
         </a>
         
