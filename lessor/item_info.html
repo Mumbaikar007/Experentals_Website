@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>Item_info</title>
+</head>
+
+<body>
+
+<style>
+.card{
+	background: #ff0; 
+	border-radius: 60px;
+	border-color: black;  
+	height: 500px;
+	width: 500px; 	
+	display: inline-block;
+	position: relative;
+}
+</style>
+<!-- I have made the form backgorund yellow, as he border is currently not working -->
+
+
+<script>
+function myFunction() {
+    var x, text;
+
+    // Get the value of the input field with id="numb"
+    x = document.getElementById("price").value;
+
+    // If x is Not a Number or less than one or greater than 10
+    if (isNaN(x)) {
+    	alert("The price must be a number!");
+    	document.getElementById("form_input").reset();
+    } 
+
+}
+</script>
+
+<!-- This validation is to check if nummeric input is provided within price textbox -->
+<!-- UNTESTED, this can be tested only if the submit button is working-->
+
+<!-- Why do comments not work properly inside style and script tags?-->
+
+
+
+
+<center>
+<h2> Details </h2>
+
+	<div class="card">
+	<form id="form_input" action="item_info.php" method="POST">
+		<table>
+			<tr>
+				<td> Object Title : 
+				<td> <input type="text" name="title" required>
+			</tr>
+			<tr>
+				<td> Category : 
+				<td> <input type="text" name="category" required>
+			</tr>
+			<tr>
+				<td> Description :
+				<td> <textarea name="description" cols="40" rows="5" required></textarea>
+			</tr>
+			<tr>
+				<td> Image :
+					<td> <input type="file" name="img" accept="image/*">
+			</tr>
+			<!-- Input another type of file here not an image, and see what happens @Pranav-->
+
+			<tr>
+				<td> Price ( Monthly ) :
+				<td> <input type="text" id="price" name="price" required="">
+			</tr>
+			
+			<tr>
+				<td><button type="submit" onclick="myFunction()"><a href="wwww.google.com">Place advertisment!</a></button>
+				<td>
+			</tr>
+		</table>
+	</form>
+	</div>
+
+
+</center>
+</body>
+</html>
+
+
+<!--
+SO FAR:
+- Made a basic form
+- FOR IMAGE INPUT, it takes file as input with any type of image, to be tested, also image types to be restricted depending on the type of database storage issues
+- Added check for empty entries and price of item being a number 
+- messed up style tag that needs to be replaced with bootstrap
+- price being a number not tested 
+- trying to just display the values not working 
+- I have removes the required elemet from input of image because I need to test the form without that!
+
+- xampp servers hav to be switched on, for php pages to load, in browser address must include localhost
+
+
+TO DO NEXT:
+- Make the submit button work ( just display values )
+- Store values in DB ( image ->last )
+- Check all pending JS objects
+
+-->

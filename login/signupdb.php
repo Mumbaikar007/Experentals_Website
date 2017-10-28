@@ -28,7 +28,7 @@
             $result=mysqli_query($con ,$sql);  
                 if($result){  
             echo "Account Successfully Created";
-            header("Location: login.html");    
+            header("Location: login.php");    
             } else {  
             echo "Failure!";  
             }  

@@ -1,4 +1,9 @@
-  <!DOCTYPE html>
+<?php
+  session_start();
+
+?>
+
+<!DOCTYPE html>
 <html>
 <head>
   
@@ -163,11 +168,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
           </button>
-         <!-- <a class="navbar-brand" href="#">WebSiteName</a>-->
+          <a class="navbar-brand" href="#">ExpeRentals</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="finalindex.html">Home</a></li>
+            <li><a href="RentandLess/searchAnItem.php">Search An Item</a></li>
+            <li><a href="RentandLess/putAd.php">Rent An Item</a></li>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -179,14 +186,38 @@
                 
               </ul>
             </li>
-            <li><a href="#">Trending</a></li>
+            
             <li><a href="#"></a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
 
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            <!-- <li style="color: white;margin-top: 11px;">Search : <input type="text" name="search" value="Type a keyword" style="color: black;"> -->
+            <li><a href="ChatSystem/thechat.php">Chat</a></li>
+            <li><a href="login/login.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="login/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <!-- <li style="color: white;margin-top: 11px;">Search : <input type="text" name="search" value="Type a keyword" style="color: black;"> --> ';
+
+
+            <?php
+
+
+/*
+            if ( isset($_SESSION['lllog']) ){
+              
+              echo '
+              <li><a href="login/login.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a href="login/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <!-- <li style="color: white;margin-top: 11px;">Search : <input type="text" name="search" value="Type a keyword" style="color: black;"> --> ';
+            }
+
+            else {
+              echo '
+              
+              <li><a href="login/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+              <!-- <li style="color: white;margin-top: 11px;">Search : <input type="text" name="search" value="Type a keyword" style="color: black;"> --> ';
+            }
+*/
+            ?>
+
           </ul>
         </div>
       </div>
@@ -208,12 +239,12 @@
       
       <!-- <img src="" alt="ExpeRentals LOGO"> -->
 
-      <p  class="large-devices-only" style="font-size: 100px;color: white;">Experentals </p>
+      <p  class="large-devices-only" style="font-size: 100px;color: white;font-family: Georgia, serif;">Experentals </p>
 
-      <p  class="mobile-only" style="font-size: 50px;color: white;">Experentals</p>
+      <p  class="mobile-only" style="font-size: 50px;color: white;font-family: Georgia, serif;">Experentals</p>
 
-      <p style="color:white; font-size: 30px;"> Rentals for Experiments</p><br />
-      <p style="color: white;font-size: 18px;">We facilitie low cost availability of equipments for sharing of electronics and hardware among people.<br />Our system bridges those with surplus electronic equipments to those who require them.</p>
+      <p style="color:white; font-size: 30px;font-family: Georgia, serif;"> Rentals for Experiments</p><br />
+      <!-- <p style="color: white;font-size: 18px;">We facilitie low cost availability of equipments for sharing of electronics and hardware among people.<br />Our system bridges those with surplus electronic equipments to those who require them.</p> -->
 
     </div>
 
@@ -224,7 +255,7 @@
 
 
   <!-- =========================CHOICE: RENTER OR LESSOR STARTS==================== -->
-  <div class="container-fluid" style="min-height: 500px; padding-top: 30px;padding-bottom: 20px; background-color: #b5e7a0;">
+  <div class="container-fluid" style="min-height: 500px; padding-top: 30px;padding-bottom: 20px; background-color: white">
     
     <div style="font-size: 37px; text-align: center;">
       What do you want to do ?
@@ -234,8 +265,10 @@
 
       <div class="col-lg-4 col-xs-12 " style=" padding-top: 40px;text-align: right;">
         
-        <img class = "abc img-responsive mobile-only center " src="images/homepage/lessor.png" alt="RENTER" width="300px" height="250px" align="center">
-
+        <a href="RentandLess/putAd.php">
+          <img class = "abc img-responsive mobile-only center " src="images/homepage/lessor.png" alt="RENTER" width="300px" height="250px" align="center">
+        </a>
+        
       </div>
       
       <div class="col-lg-4 col-xs-12" style="padding: 100px;">
@@ -246,7 +279,9 @@
 
       <div class="col-lg-4 col-xs-12" style="text-align: center; padding-top: 40px;">
 
-        <img class = "abc img-responsive center mobile-only" src="images/homepage/lessee.png" alt="LESSOR" width="300px" height="250px" align="center">
+        <a href="RentandLess/searchAnItem.php">
+          <img class = "abc img-responsive center mobile-only" src="images/homepage/lessee.png" alt="LESSOR" width="300px" height="250px" align="center">
+        </a>
 
 
       </div>
@@ -261,9 +296,11 @@
 
   <!-- ==========================HOW IT WORKS STARTS============================== -->
   
-  <div class="container-fluid" id = "cont" style="min-height: 500px;padding: 30px 10px 20px 10px;"> 
+  <div class="parallax" id = "cont" style="background-image: url(images/homepage/123.png); height: 400px;">
+
+  <!-- style="background-color: #03a9f4;min-height: 500px;padding: 30px 10px 20px 10px;" --> 
       
-      <p style="text-align: center;font-size: 50px;margin-bottom: 20px;"> How it works </p>
+      <p style="color: white;text-align: center;font-size: 50px;margin-bottom: 20px;"> How it works </p>
 
     
 <!--
@@ -522,6 +559,7 @@
       <div class="col-md-4">
         <div>
           <img src="images/homepage/pranav.jpg" alt="Texto Alternativo" class="img-circle img-thumbnail">
+          <br><br><br><br>
           <h2>Pranav Puranik</h2>
           <p><p>Co-founder,EXPERENTALS.<br />Specialist in Internet of Things</p>
           <a href="#" class="btn btn-primary" title="Enlace">Contact now</a>
