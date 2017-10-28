@@ -84,7 +84,7 @@
 
 
 </head>
-<body>
+<body >
 		
 		
   <!-- =========================HEADER==================================== -->
@@ -193,46 +193,66 @@
 
 
 	  <!-- ============================ SEARCH BAR STARTS ========================= -->
+	  <center><img src="../images/logowb small.png" width="200px" height="100px" ></body></center><br />
+	  <div style="font-size: 40px;text-align: center; background-color: blue;color: white; opacity: 0.5">
+		
+		Search for an Item
 
-	 	<div>
-	 		
-	 		<div class="container-fluid">
+	</div>
+
+	 	
+	 		<div style="margin-top: 50px; background-image: url(123.png); opacity: 0.8 ">
+	 		<div class="card" style="padding: 30px 40px 20px 40px;max-width: 500px;margin: auto; min-width: 300px;	background-color: white; border-style: solid;border-width: 1px;">
 	 			
 	 			<form action="searchAnItem.php" method = "POST" onsubmit="return validateForm()">
-	 			
-	 			<div class="row">
-
+	 		
+	 				<!--center><img src="logo.png"></center>-->
 	 				
-
-		 				<div class="col-lg-4 col-xs-12">
+	 				<table align="center" style="font-size: 20px">
+		 				<!--<div class="col-lg-4 col-xs-12">-->
 		 					
-		 					Item Name:
-		 					<input type="text" name="name">
 
-		 				</div>
+		 					<tr>
+		 						<td><p class="glyphicon glyphicon-info-sign"></p>
+		 					Item Name&emsp;
+		 					<td>:</td>
+		 					<td><input type="text" name="name"></td>
+		 				</tr>
+		 				<tr>
+		 					<td><br /></td>
+		 				</tr>
 
-		 				<div class="col-lg-4 col-xs-12">
-		 					
-		 					Category:
-		 					<input type="text" name="category">
+		 				<!--<div class="col-lg-4 col-xs-12">-->
+		 					<tr><td><p class="	glyphicon glyphicon-th-list"></p>
+		 					Category&emsp;
+		 					<td>:</td>&emsp;
+		 					<td><input type="text" name="category"></td>
+		 					</tr>
+
+		 				<tr>
+		 					<td><br /></td>
+		 				</tr>
 
 
-		 				</div>
+		 				<!--<div class="col-lg-4 col-xs-12">-->
+		 					<tr><td><p class="glyphicon glyphicon-map-marker"></p>
+		 					Location&emsp;
+		 					<td>:</td>&emsp;
+		 					<td><input type="text" name="location" ></td>
+		 				</tr>
 
-		 				<div class="col-lg-4 col-xs-12">
-		 					
-		 					Location:
-		 					<input type="text" name="location">
+		 			<tr>
+		 					<td><br /></td>
+		 				</tr>
 
-
-		 				</div>
+		 			</table>
 		 				
-	 			</div>
+	 			
 	 			<br>
 	 			<center>
 	 			<!-- <a href="searchAnItem.php?hello=true&name=$name&location=true&location2=$location"> -->
 	 				<!-- <input type="button" name="test" id="test" value="RUN" /><br/> -->
-					<button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span> Search</button>
+					<button type="submit" class="btn btn-info"><h4><span class="glyphicon glyphicon-search"></span> Search</h4></button>
 				<!-- </a> -->
 				</center>
 
@@ -264,12 +284,7 @@
 	  	<br/>
 
 
-	  	<div class = "container-fluid">
-	  		
-	  		
-
-
-	  	</div>
+	  	
 
 
 	  	<div class="container">
