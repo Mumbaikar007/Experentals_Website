@@ -195,47 +195,69 @@ else {
 
 
 	<!-- ====================== FORM ======================== -->
-
-	<div style="font-size: 40px;text-align: center;">
+<center><img src="../images/logowb small.png" width="200px" height="100px" ></body></center><br />
+	<div style="font-size: 40px;text-align: center; background-color: blue;color: white; opacity: 0.5">
 		
 		Rent an Item
 
 
 	</div>
 
+	<style type="text/css">
+		tr{
+			font-weight: bold;
+		}
+	</style>
 
+	<div style="margin-top: 50px; background-image: url(123.png); opacity: 0.8 ">
 
-	<div style="margin-top: 50px;">
-
-	<div class="card" style="padding: 30px 40px 20px 40px;max-width: 500px;margin: auto; min-width: 300px;	background-color: white;">
+	<div class="card" style="padding: 30px 40px 20px 40px;max-width: 500px;margin: auto; min-width: 300px;	background-color: white; border-style: solid;border-width: 1px;">
 	<form id="form_input" action="includes/send.php" method="POST">
 		<table >
 			<tr>
-				<td> Object Title :</td> 
-				<td> <input type="text" name="title" required></td>
+				<td><p class="glyphicon glyphicon-info-sign"></p> &nbsp;Object Title </td> 
+				<td> <input type="text" name="title" placeholder="Enter title" required></td>
 			</tr>
 			<tr>
-				<td> Category : </td>
-				<td> <input type="text" name="category" required></td>
+		 		<td><br /></td>
 			</tr>
 			<tr>
-				<td> Description :</td>
-				<td> <textarea name="description" cols="30" rows="5" required></textarea></td>
+				<td><p class="glyphicon glyphicon-th-list"></p> &nbsp;Category  </td>
+				<td> <input type="text" name="category" placeholder="Select a category" required></td>
 			</tr>
 			<tr>
-				<td> Image :</td>
+		 		<td><br /></td>
+			</tr>
+			<tr>
+				<td> <p class="glyphicon glyphicon-pencil "></p>&nbsp;Description </td>
+				<td> <textarea name="description" cols="30" rows="5" required placeholder="Enter a description" ></textarea></td>
+			</tr>
+			<tr>
+		 		<td><br /></td>
+			</tr>
+			<tr>
+				<td> <p class="glyphicon glyphicon-picture" placeholder="Upload an image" ></p>&nbsp;Image </td>
 				<td> <input type="file" name="img" accept="image/*"> </td>
+			</tr>
+			<tr>
+		 		<td><br /></td>
 			</tr>
 			<!-- Input another type of file here not an image, and see what happens @Pranav-->
 
 			<tr>
-				<td> Price ( Monthly ) :</td>
-				<td> <input type="text" id="price" name="price" required=""></td>
+				<td>  <p class="glyphicon  glyphicon-piggy-bank"></p>&nbsp;Price (Monthly ) &emsp;</td>
+				<td> <input type="text" id="price" name="price" placeholder="Enter the price" required=""></td>
+			</tr>
+			<tr>
+		 		<td><br /></td>
 			</tr>
 
 			<tr>
-				<td> Location :</td>
-				<td> <input type="text" id="price" name="location" required=""> </td>
+				<td> <p class="glyphicon glyphicon-map-marker "></p>&nbsp;Location </td>
+				<td> <input type="text" id="price" name="location" placeholder="Enter price" required=""> </td>
+			</tr>
+			<tr>
+		 		<td><br /></td>
 			</tr>
 			
 			<tr>	

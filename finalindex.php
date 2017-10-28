@@ -21,11 +21,13 @@
 
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <script src="js/typewriter.js"></script> 
 
   <!-- <link rel="stylesheet" type="text/css" href="css/header.css"> -->
   <link rel="stylesheet" type="text/css" href="css/footer.css">
   <link rel="stylesheet" type="text/css" href="css/custom.css">
   <link rel="stylesheet" type="text/css" href="css/css.css">
+
 
    <style type="text/css">
     
@@ -161,14 +163,15 @@
 
 
     <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
+      <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
           </button>
-          <a class="navbar-brand" href="#">ExpeRentals</a>
+         <a class="navbar-brand" href="#">ExpeRentals</a>
+         
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
@@ -233,17 +236,18 @@
 
   <!-- ===================INTRODUCTION: LOGO AND MOTO STARTS==================== -->
   
-  <div class="container-fluid bg" style="background-image: url(images/homepage/background1.jpg);height: 600px;margin-top: -20px; ">
+  <div class="parallax" style="background-image: url(images/homepage/background1.jpg);height: 600px;margin-top: -20px; ">
     
     <div align="center" style=" background-size: 100%;min-height: 500px;padding-top: 100px;">
       
       <!-- <img src="" alt="ExpeRentals LOGO"> -->
+      <p style="color:white; font-size: 100px;font-family: Georgia, serif;"> Experentals</p><br />
 
-      <p  class="large-devices-only" style="font-size: 100px;color: white;font-family: Georgia, serif;">Experentals </p>
+      <!--<p  class="large-devices-only typewrite" style="font-size: 100px;color: white;font-family: Georgia, serif" data-period="2000" data-type='[ "ExpeRentals" ]'></p>-->
 
-      <p  class="mobile-only" style="font-size: 50px;color: white;font-family: Georgia, serif;">Experentals</p>
+     <p  class="large-devices-only typewrite" style="font-size: 50px;color: white;font-family: Georgia, serif" data-period="2000" data-type='[ "Rentals for Experiments" ]'></p>
 
-      <p style="color:white; font-size: 30px;font-family: Georgia, serif;"> Rentals for Experiments</p><br />
+     <!-- <p style="color:white; font-size: 30px;font-family: Georgia, serif;"> Rentals for Experiments</p><br />-->
       <!-- <p style="color: white;font-size: 18px;">We facilitie low cost availability of equipments for sharing of electronics and hardware among people.<br />Our system bridges those with surplus electronic equipments to those who require them.</p> -->
 
     </div>
@@ -255,10 +259,11 @@
 
 
   <!-- =========================CHOICE: RENTER OR LESSOR STARTS==================== -->
-  <div class="container-fluid" style="min-height: 500px; padding-top: 30px;padding-bottom: 20px; background-color: white">
+  <div class="parallax" style="min-height: 500px; padding-top: 30px;padding-bottom: 20px; background-image: url(images/homepage/wall2.jpg);">
     
-    <div style="font-size: 37px; text-align: center;">
-      What do you want to do ?
+    <div style="font-size: 35px; text-align: center;color: white" class="bg-primary">
+      <!--What do you want to do ?-->
+       <p  class="large-devices-only typewrite" style="font-size: 35px;color: white;font-family: Georgia, serif" data-period="2000" data-type='[ "What do you want to do ?" ]'></p>
     </div>
 
     <div class="row" >
@@ -266,30 +271,29 @@
       <div class="col-lg-4 col-xs-12 " style=" padding-top: 40px;text-align: right;">
         
         <a href="RentandLess/putAd.php">
-          <img class = "abc img-responsive mobile-only center " src="images/homepage/lessor.png" alt="RENTER" width="300px" height="250px" align="center">
+          <img class = "abc img-responsive mobile-only center" src="images/homepage/lessor.jpg" alt="RENTER" width="250px" height="250px" align="center" style="opacity: 0.6">
         </a>
         
       </div>
       
       <div class="col-lg-4 col-xs-12" style="padding: 100px;">
         
-        <div style="font-size: 100px;">O R</div>
+        <div style="font-size: 100px; color: white"></div>
         
       </div> 
 
       <div class="col-lg-4 col-xs-12" style="text-align: center; padding-top: 40px;">
 
         <a href="RentandLess/searchAnItem.php">
-          <img class = "abc img-responsive center mobile-only" src="images/homepage/lessee.png" alt="LESSOR" width="300px" height="250px" align="center">
+          <img class = "abc img-responsive center mobile-only" src="images/homepage/lessee.jpg" alt="LESSOR" width="250px" height="250px" align="center" style="opacity: 0.6">>
         </a>
 
 
       </div>
 
     </div>
-  </div>
-
-
+  
+</div>
   <!--</div>-->
   <!-- ==========================CHOICE ENDS============================= -->
 
@@ -300,7 +304,11 @@
 
   <!-- style="background-color: #03a9f4;min-height: 500px;padding: 30px 10px 20px 10px;" --> 
       
-      <p style="color: white;text-align: center;font-size: 50px;margin-bottom: 20px;"> How it works </p>
+      <!--<p style="color: white;text-align: center;font-size: 35px;margin-bottom: 20px;" class="bg-primary"> How it works </p>-->
+      <div style="font-size: 35px; text-align: center;color: white" class="bg-primary">
+      <!--What do you want to do ?-->
+       <p  class="large-devices-only typewrite" style="font-size: 35px;color: white;font-family: Georgia, serif" data-period="2000" data-type='[ " How it works " ]'></p>
+    </div>
 
     
 <!--
@@ -535,9 +543,13 @@
       </div>
     </div>
   </div> -->
-  <div class="container">
+  <div class="parallax" style="background-image: url(images/homepage/wall1.jpg); color: white">
     <div class="row destacados">
-    	<p style="font-size: 30px">Need help ? Talk to our experts</p>
+    	<!--<p style="font-size: 35px" class="bg-primary">Need help ? Talk to our experts</p>-->
+      <div style="font-size: 35px; text-align: center;color: white" class="bg-primary">
+      <!--What do you want to do ?-->
+       <p  class="large-devices-only typewrite" style="font-size: 35px;color: white;font-family: Georgia, serif" data-period="2000" data-type='[ " Need help ? Talk to our experts " ]'></p>
+    </div>
       <div class="col-md-4">
           <div>
           <img src="images/homepage/adarsh.jpg" alt="Texto Alternativo" class="img-circle img-thumbnail">
@@ -549,7 +561,7 @@
 
       <div class="col-md-4">
         <div>
-          <img src="images/homepage/aditi.jpg" alt="Texto Alternativo" class="img-circle img-thumbnail">
+          <img src="images/homepage/aditi.jpg" alt="Texto Alternativo" class="img-circle img-thumbnail" >
           <h2>Aditi Pawaskar</h2>
           <p>Co-founder,EXPERENTALS.<br />Specialist in Artificial Intelligence</p>
           <a href="#" class="btn btn-primary" title="Enlace">Contact now</a>
@@ -558,8 +570,8 @@
 
       <div class="col-md-4">
         <div>
-          <img src="images/homepage/pranav.jpg" alt="Texto Alternativo" class="img-circle img-thumbnail">
-          <br><br><br><br>
+          <img src="images/homepage/prnv.jpg" alt="Texto Alternativo" class="img-circle img-thumbnail">
+          
           <h2>Pranav Puranik</h2>
           <p><p>Co-founder,EXPERENTALS.<br />Specialist in Internet of Things</p>
           <a href="#" class="btn btn-primary" title="Enlace">Contact now</a>

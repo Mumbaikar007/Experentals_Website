@@ -366,15 +366,15 @@
 	<div style="margin-top: 1" >
 	</div>
 	
-	<div style="margin-top: 10px;">
+	<div style="margin-top: 10px; background-image: url(123.png); opacity: 0.8 ">
 
-	<div class="card" style="padding: 10px 10px 10px 10px;max-width: 500px;margin: auto; min-width: 300px;	background-color: white;">
+	<div class="card" style="padding: 10px 10px 10px 10px;max-width: 500px;margin: auto; min-width: 300px;	background-color: white; border-width: 1px;border-style: solid;">
 	
 
 		<ul class="nav nav-tabs nav-justified">
 			
-			<li class="active"><a data-toggle="tab" href="#LogIn">LogIn</a></li>
-			<li><a data-toggle="tab" href="#SignUp">Sign Up</a></li>
+			<li class="active"><a data-toggle="tab" href="#LogIn"><b>LogIn</b></a></li>
+			<li><a data-toggle="tab" href="#SignUp"><b>Sign Up</b></a></li>
 			
 	  	</ul>
 	  	
@@ -409,7 +409,7 @@
  				</form>   	
 		    </div>
 	    
-	    	<div name="myForm" id="SignUp" class="tab-pane fade">
+	    	<div name="myForm" id="SignUp" class="tab-pane fade" >
 		      <form action = "signupdb.php" method = "POST" onsubmit="return validateForm()">
 
 				   <div class="form-group">
