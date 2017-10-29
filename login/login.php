@@ -1,4 +1,11 @@
+<?php 
 
+	session_start();
+
+	if ( !isset($_SESSION['sess_user']) )
+		/*echo $_SESSION['sess_user'];*/
+
+ ?>
 
 <!DOCTYPE html>
 <html> 
@@ -40,106 +47,6 @@
 		.left-addon input  { padding-left:  30px; }
 		.right-addon input { padding-right: 30px; }
 
-
-
-/*	.panel-login {
-		border-color: #ccc;
-		-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
-		-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
-		box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
-	}
-	.panel-login>.panel-heading {
-		color: #00415d;
-		background-color: #fff;
-		border-color: #fff;
-		text-align:center;
-	}
-	.panel-login>.panel-heading a{
-		text-decoration: none;
-		color: #666;
-		font-weight: bold;
-		font-size: 15px;
-		-webkit-transition: all 0.1s linear;
-		-moz-transition: all 0.1s linear;
-		transition: all 0.1s linear;
-	}
-	.panel-login>.panel-heading a.active{
-		color: #029f5b;
-		font-size: 18px;
-	}
-	.panel-login>.panel-heading hr{
-		margin-top: 10px;
-		margin-bottom: 0px;
-		clear: both;
-		border: 0;
-		height: 1px;
-		background-image: -webkit-linear-gradient(left,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0));
-		background-image: -moz-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
-		background-image: -ms-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
-		background-image: -o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
-	}
-	.panel-login input[type="text"],.panel-login input[type="email"],.panel-login input[type="password"] {
-		height: 45px;
-		border: 1px solid #ddd;
-		font-size: 16px;
-		-webkit-transition: all 0.1s linear;
-		-moz-transition: all 0.1s linear;
-		transition: all 0.1s linear;
-	}
-	.panel-login input:hover,
-	.panel-login input:focus {
-		outline:none;
-		-webkit-box-shadow: none;
-		-moz-box-shadow: none;
-		box-shadow: none;
-		border-color: #ccc;
-	}
-	.btn-login {
-		background-color: #59B2E0;
-		outline: none;
-		color: #fff;
-		font-size: 14px;
-		height: auto;
-		font-weight: normal;
-		padding: 14px 0;
-		text-transform: uppercase;
-		border-color: #59B2E6;
-	}
-	.btn-login:hover,
-	.btn-login:focus {
-		color: #fff;
-		background-color: #53A3CD;
-		border-color: #53A3CD;
-	}
-	.forgot-password {
-		text-decoration: underline;
-		color: #888;
-	}
-	.forgot-password:hover,
-	.forgot-password:focus {
-		text-decoration: underline;
-		color: #666;
-	}
-
-	.btn-register {
-		background-color: #1CB94E;
-		outline: none;
-		color: #fff;
-		font-size: 14px;
-		height: auto;
-		font-weight: normal;
-		padding: 14px 0;
-		text-transform: uppercase;
-		border-color: #1CB94A;
-	}
-	.btn-register:hover,
-	.btn-register:focus {
-		color: #fff;
-		background-color: #1CA347;
-		border-color: #1CA347;
-	}
-
-*/
 	/*=========CSS CODED================*/
 	
 	.card {
@@ -147,96 +54,92 @@
 	    transition: 0.3s;
 	    width: 40%;
 	}
-
+	/*rgba(0,0,0,0.2)*/
 	.card:hover {
-	    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	    box-shadow: 0 4px 8px 0 white;
 	}
 
 	.container {
 	    padding: 2px 16px;
 	}
 	
+	/*NET*/
+	.nav-tabs { border-bottom: 2px solid #DDD; }
+    .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
+    .nav-tabs > li > a { border: none; color: #666; }
+        .nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none; color: #4285F4 !important; background: transparent; }
+        .nav-tabs > li > a::after { content: ""; background: #4285F4; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+    .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
+	.tab-nav > li > a::after { background: #21527d none repeat scroll 0% 0%; color: #fff; }
+	/*Done*/
 
 
 
 	</style>
 
-	<!-- <script type="text/javascript">
-		
-/*		$(function() {
-
-		    $('#login-form-link').click(function(e) {
-				$("#login-form").delay(100).fadeIn(100);
-		 		$("#register-form").fadeOut(100);
-				$('#register-form-link').removeClass('active');
-				$(this).addClass('active');
-				e.preventDefault();
-			});
-			$('#register-form-link').click(function(e) {
-				$("#register-form").delay(100).fadeIn(100);
-		 		$("#login-form").fadeOut(100);
-				$('#login-form-link').removeClass('active');
-				$(this).addClass('active');
-				e.preventDefault();
-			});
-
-		});
-
-*/
-	</script>
- -->
 	<script type="text/javascript">
-				  		
+
+		/*=========== For Signup ===========*/				  		
+		
 		function validateForm() {
+
 		    
-		    var username = document.getElementById("user");
-		    var password = document.getElementById("pwd");
-		    var cpassword = document.getElementById("conpwd");
+		    var username = document.signup.user;
+		    var password = document.signup.pass;
+		    var cpassword = document.signup.cpass;
 		    
 		    if (username.value == "" ){
 		    	alert("UserName cannot be empty !!");
+		    	username.focus();
+		    	return false;
 		    }
 
 		    var paswd=  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;  
-			if(password.value.match(paswd))   
+			if(!password.value.match(paswd))   
 			{    
-				  
-			}  
-			else  
-			{   
-				alert('password between 7 to 15 characters which contain at least one numeric digit and a special character!')  
+		    	alert('password between 7 to 15 characters which contain at least one numeric digit and a special character!')  
 				password.focus();
-			} 
+				return false;
+			}
 
 		    if ( password.value != cpassword.value) {
 		        alert("Password should be same !!");
-				cpassword.focus();		        
+				cpassword.focus();		
+				return false;        
 		        
 		    }
 
-		    return false;
+		    return true;
 		}
+
+		/*============ Signup Done =================*/
+
+		/*============== For Login ==============*/
 
 		function validateForm2() {
 		    
-		    var username = document.getElementById("user");
-		    var password = document.getElementById("pass");
-		    
+		    var username = document.login.user;
+		    var password = document.login.pass;
+
 		    if (username.value == "" ){
-		    	alert("UserName cannot be empty !!");
+		    	document.getElementById("PASS").style.display = "block";
+		    	username.focus();
+		    	return false;
 		    }
 
-		    var paswd=  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;  
-			if(password.value.match(paswd)) {}  
-			
-			else {   
-				
-				alert('password between 7 to 15 characters which contain at least one numeric digit and a special character!')  
-				password.focus();
-			} 
-			
-		    return true;
+
+		    var paswd =  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;  
+
+
+			if(!password.value.match(paswd)) {
+				username.focus();
+				document.getElementById("PASS").style.display = "block";  
+				return false;
+			}  
+			return true;
 		}
+
+		/*============== LogIn Done =============*/
 
 	</script>
 
@@ -244,58 +147,26 @@
 
 
 </head>
-<body>
+<body style="background: radial-gradient(ellipse at center, rgb(17, 67, 96) 0%, rgb(17, 45, 68) 50%);">
 
 
-   <!-- =========================HEADER==================================== -->
+  <!-- =========================HEADER==================================== -->
   <header >
-    
-    <!--  <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>                        
-          </button>
-          <a class="navbar-brand" href="#">Experentals</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav">
-            <li><a href="#">Home</a></li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Page 1-1</a></li>
-                <li><a href="#">Page 1-2</a></li>
-                <li><a href="#">Page 1-3</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Page 2</a></li>
-            <li><a href="#">Page 3</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav> -->
-
-
+  
     <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
+      <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
           </button>
-          <a class="navbar-brand" href="#">ExpeRentals</a>
+         <a class="navbar-brand" href="../finalindex.php">ExpeRentals</a>
+         
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="../finalindex.html">Home</a></li>
+            <li class="active"><a href="../finalindex.php">Home</a></li>
             <li><a href="../RentandLess/searchAnItem.php">Search An Item</a></li>
             <li><a href="../RentandLess/putAd.php">Rent An Item</a></li>
             <li class="dropdown">
@@ -310,35 +181,27 @@
               </ul>
             </li>
             
-            <li><a href="#"></a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
 
             <li><a href="../ChatSystem/thechat.php">Chat</a></li>
-            <li><a href="../login/login.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="../login/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            <!-- <li style="color: white;margin-top: 11px;">Search : <input type="text" name="search" value="Type a keyword" style="color: black;"> --> ';
-
-
             <?php
 
 
-/*
-            if ( isset($_SESSION['lllog']) ){
+
+            if  (!array_key_exists('sess_user',$_SESSION) && empty($_SESSION['sess_user'])){
               
               echo '
-              <li><a href="login/login.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-              <li><a href="login/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-              <!-- <li style="color: white;margin-top: 11px;">Search : <input type="text" name="search" value="Type a keyword" style="color: black;"> --> ';
+              <li><a href="../login/login.php?open=signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a href="../login/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
+              
             }
 
             else {
               echo '
-              
-              <li><a href="login/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-              <!-- <li style="color: white;margin-top: 11px;">Search : <input type="text" name="search" value="Type a keyword" style="color: black;"> --> ';
+              <li><a href="../login/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li> ';
             }
-*/
+
             ?>
 
           </ul>
@@ -358,38 +221,67 @@
 
 
 
-	<div style="text-align: center;">
-		<img src="../images/logowb small.png" width="200px" height="100px" ><!-- style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	<div style="text-align: center; color: white; font-family: Georgia, serif;font-size: 60px;margin-top: 70px;">
+
+		<b>Experentals.</b>
+
+		<!-- <img src="../images/logowb small.png" width="200px" height="100px" > --><!-- style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 		"  -->
 	</div>
 	
 	<div style="margin-top: 1" >
 	</div>
 	
-	<div style="margin-top: 10px; background-image: url(123.png); opacity: 0.8 ">
+	<div style="opacity: 0.7;"><!-- background-image: url(123.png); border-width: 1px;border-style: solid; -->
 
-	<div class="card" style="padding: 10px 10px 10px 10px;max-width: 500px;margin: auto; min-width: 300px;	background-color: white; border-width: 1px;border-style: solid;">
+	<div class="card" style="padding: 10px 10px 10px 10px;max-width: 500px;margin: auto; min-width: 300px;	background-color: white;">
 	
 
-		<ul class="nav nav-tabs nav-justified">
-			
-			<li class="active"><a data-toggle="tab" href="#LogIn"><b>LogIn</b></a></li>
-			<li><a data-toggle="tab" href="#SignUp"><b>Sign Up</b></a></li>
-			
-	  	</ul>
-	  	
-	  	<hr>
-
-	  	<div class="tab-content">
 		
-		    <div id="LogIn" class="tab-pane fade in active">
-		    	 <form action = "/experentals/login/logindb.php" method = "POST" onsubmit="return validateForm2()">
+
+	  	<?php
+
+	  	if (!isset($_GET['open']))
+	  		$var = "login";
+	  	else
+	  		$var = $_GET['open'];
+	  	
+
+	  	echo '
+	  	<ul class="nav nav-tabs nav-justified">';
+			
+	  		if ($var == "login"){ 
+			   echo '<li class="active"><a data-toggle="tab" href="#LogIn"><b>LogIn</b></a></li>
+			   		 <li><a data-toggle="tab" href="#SignUp"><b>Sign Up</b></a></li>';
+			}
+			else{
+				echo '<li><a data-toggle="tab" href="#LogIn"><b>LogIn</b></a></li>
+					  <li class="active"><a data-toggle="tab" href="#SignUp"><b>Sign Up</b></a></li>';
+			}
+
+
+			
+			echo'
+	  	</ul>
+	  	<hr>
+	  	<div ID = "PASS" style="color: red; display: none; text-align: center;"><p style="background-color: rgba(255, 0, 0, 0.4);">Invalid Username or Password !!</p></div>
+	  	<div class="tab-content">';
+
+	  	if ($var == "login"){ 
+		   echo '<div id="LogIn" class="tab-pane fade in active">';
+		}
+		else{
+			echo '<div id="LogIn" class="tab-pane fade">';
+		}
+
+		echo '<form action = "/experentals/login/logindb.php" name="login" method = "POST" onsubmit="return validateForm2()">
 
 				   <div class="form-group">
 				     <label >Username:</label>
 				     <div class="inner-addon left-addon">
 						<i class="glyphicon glyphicon-user"></i>
 						<input type="text" class="form-control" placeholder="UserName" name = "user">
+
 					</div>
 				   </div>
 
@@ -399,6 +291,7 @@
 				     <div class="inner-addon left-addon">
 						<i class="glyphicon glyphicon-lock"></i>
 						<input type="password" class="form-control" placeholder="Password" name = "pass">
+						
 					</div>
 				   </div>
 				   <div class="checkbox" style="text-align: center;">
@@ -407,10 +300,18 @@
  				   	 <input type = "submit" name = "submit" class="btn btn-primary btn-lg">
  					</div>
  				</form>   	
-		    </div>
+		    </div>';
 	    
-	    	<div name="myForm" id="SignUp" class="tab-pane fade" >
-		      <form action = "signupdb.php" method = "POST" onsubmit="return validateForm()">
+	    	if ($var == "login"){ 
+			   echo '<div  id="SignUp" class="tab-pane fade" >';
+			}
+			else{
+				echo '<div id="SignUp" class="tab-pane fade in active">';
+			}
+
+			echo '
+	    	
+		      <form name="myForm" action = "signupdb.php" method = "POST" name = "signup" onsubmit="return validateForm()">
 
 				   <div class="form-group">
 				     <label >Username:</label>
@@ -462,103 +363,14 @@
 			</div>
 
 		</div>
+		';
+		?>
+
 		<hr>
 		
 	</div>
 	</div>
 	<!-- ======================TRYING ENDS==================== -->
-
-	<!-- =============== PHP =================== -->
-
-	  
-
-	<!-- ================== PHP ENDS ===============-->
-
-
-  	<!-- ================BOOTSNIP STARTS================== box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-		" >
-	</div>
-	
-	<div style="margin-top: 1-->
-
-<!--   	<div class="container">
-    	<div class="row">
-			<div class="col-md-6 col-md-offset-3">
-				<div class="panel panel-login">
-					<div class="panel-heading">
-						<div class="row">
-							<div class="col-xs-6">
-								<a href="#" class="active" id="login-form-link">Login</a>
-							</div>
-							<div class="col-xs-6">
-								<a href="#" id="register-form-link">Register</a>
-							</div>
-						</div>
-						<hr>
-					</div>
-					<div class="panel-body">
-						<div class="row">
-							<div class="col-lg-12">
-								<form id="login-form" action="https://phpoll.com/login/process" method="post" role="form" style="display: block;">
-									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
-									</div>
-									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
-									</div>
-									<div class="form-group text-center">
-										<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
-										<label for="remember"> Remember Me</label>
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-lg-12">
-												<div class="text-center">
-													<a href="https://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</form>
-								<form id="register-form" action="https://phpoll.com/register/process" method="post" role="form" style="display: none;">
-									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
-									</div>
-									<div class="form-group">
-										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
-									</div>
-									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
-									</div>
-									<div class="form-group">
-										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
-											</div>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
- -->
-
-  	<!-- ==================BOOTSNIP ENDS==================== -->
-
 
 </body>
 </html>
