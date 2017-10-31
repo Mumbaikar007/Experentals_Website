@@ -1,35 +1,12 @@
 <?php
+	
+  require ('includes/send.php');
+  
 
-/*session_start();
-
-echo $_SESSION['name'];
-
-if ( isset ($_SESSION['sess_user'])){
-	//echo 'Welcome, '.$_SESSION['username'].' !!';
-	echo "You can rent";
-}
-else {
-	echo "Please Login First";
-}
-*/
-?>
+  if  (!array_key_exists('sess_user',$_SESSION) && empty($_SESSION['sess_user']))
+    header("location: ../login/login.php");
 
 
-<?php
-
-	require ('includes/send.php');
-	//echo "index.php";
-/*
-	if(isset($_POST['send'])) {
-		if (send_msg( $_POST['sender'], $_POST['message'] ) )
-		{
-			echo 'Message Sent';
-
-		}
-		else{
-			echo 'Message failed';
-		}
-	}*/
 ?>
 
 
@@ -90,55 +67,23 @@ else {
 <body>
 		
 
-    <!-- =========================HEADER==================================== -->
+  <!-- =========================HEADER==================================== -->
   <header >
-    
-    <!--  <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>                        
-          </button>
-          <a class="navbar-brand" href="#">Experentals</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav">
-            <li><a href="#">Home</a></li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Page 1-1</a></li>
-                <li><a href="#">Page 1-2</a></li>
-                <li><a href="#">Page 1-3</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Page 2</a></li>
-            <li><a href="#">Page 3</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav> -->
-
-
+  
     <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
+      <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
           </button>
-          <a class="navbar-brand" href="#">ExpeRentals</a>
+         <a class="navbar-brand" href="../finalindex.php">ExpeRentals</a>
+         
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="../finalindex.html">Home</a></li>
+            <li class="active"><a href="../finalindex.php">Home</a></li>
             <li><a href="../RentandLess/searchAnItem.php">Search An Item</a></li>
             <li><a href="../RentandLess/putAd.php">Rent An Item</a></li>
             <li class="dropdown">
@@ -153,35 +98,27 @@ else {
               </ul>
             </li>
             
-            <li><a href="#"></a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
 
             <li><a href="../ChatSystem/thechat.php">Chat</a></li>
-            <li><a href="../login/login.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="../login/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            <!-- <li style="color: white;margin-top: 11px;">Search : <input type="text" name="search" value="Type a keyword" style="color: black;"> --> ';
-
-
             <?php
 
 
-/*
-            if ( isset($_SESSION['lllog']) ){
+
+            if  (!array_key_exists('sess_user',$_SESSION) && empty($_SESSION['sess_user'])){
               
               echo '
-              <li><a href="login/login.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-              <li><a href="login/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-              <!-- <li style="color: white;margin-top: 11px;">Search : <input type="text" name="search" value="Type a keyword" style="color: black;"> --> ';
+              <li><a href="../login/login.php?open=signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a href="../login/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
+              
             }
 
             else {
               echo '
-              
-              <li><a href="login/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-              <!-- <li style="color: white;margin-top: 11px;">Search : <input type="text" name="search" value="Type a keyword" style="color: black;"> --> ';
+              <li><a href="../login/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li> ';
             }
-*/
+
             ?>
 
           </ul>
@@ -211,7 +148,7 @@ else {
 
 	<div style="margin-top: 50px; background-image: url(123.png); opacity: 0.8 ">
 
-	<div class="card" style="padding: 30px 40px 20px 40px;max-width: 500px;margin: auto; min-width: 300px;	background-color: white; border-style: solid;border-width: 1px;">
+	<div style="padding: 30px 40px 20px 40px;max-width: 500px;margin: auto; min-width: 300px;	background-color: white; border-style: solid;border-width: 1px;">
 	<form id="form_input" action="includes/send.php" method="POST">
 		<table >
 			<tr>

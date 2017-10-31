@@ -1,6 +1,8 @@
 <?php
   session_start();
 
+  if  (!array_key_exists('sess_user',$_SESSION) && empty($_SESSION['sess_user']))
+    //echo '<script>alert("Log in first");</script>'
 ?>
 
 <!DOCTYPE html>
@@ -128,40 +130,7 @@
 
   <!-- =========================HEADER==================================== -->
   <header >
-    
-    <!--  <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>                        
-          </button>
-          <a class="navbar-brand" href="#">Experentals</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav">
-            <li><a href="#">Home</a></li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Page 1-1</a></li>
-                <li><a href="#">Page 1-2</a></li>
-                <li><a href="#">Page 1-3</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Page 2</a></li>
-            <li><a href="#">Page 3</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav> -->
-
-
+  
     <nav class="navbar navbar-inverse">
       <div class="container">
         <div class="navbar-header">
@@ -170,12 +139,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
           </button>
-         <a class="navbar-brand" href="#">ExpeRentals</a>
+         <a class="navbar-brand" href="finalindex.php">ExpeRentals</a>
          
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="finalindex.html">Home</a></li>
+            <li class="active"><a href="finalindex.php">Home</a></li>
             <li><a href="RentandLess/searchAnItem.php">Search An Item</a></li>
             <li><a href="RentandLess/putAd.php">Rent An Item</a></li>
             <li class="dropdown">
@@ -190,35 +159,27 @@
               </ul>
             </li>
             
-            <li><a href="#"></a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
 
             <li><a href="ChatSystem/thechat.php">Chat</a></li>
-            <li><a href="login/login.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="login/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            <!-- <li style="color: white;margin-top: 11px;">Search : <input type="text" name="search" value="Type a keyword" style="color: black;"> --> ';
-
-
             <?php
 
 
-/*
-            if ( isset($_SESSION['lllog']) ){
+
+            if  (!array_key_exists('sess_user',$_SESSION) && empty($_SESSION['sess_user'])){
               
               echo '
-              <li><a href="login/login.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-              <li><a href="login/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-              <!-- <li style="color: white;margin-top: 11px;">Search : <input type="text" name="search" value="Type a keyword" style="color: black;"> --> ';
+              <li><a href="login/login.php?open=signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a href="login/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
+              
             }
 
             else {
               echo '
-              
-              <li><a href="login/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-              <!-- <li style="color: white;margin-top: 11px;">Search : <input type="text" name="search" value="Type a keyword" style="color: black;"> --> ';
+              <li><a href="login/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li> ';
             }
-*/
+
             ?>
 
           </ul>
@@ -259,7 +220,7 @@
 
 
   <!-- =========================CHOICE: RENTER OR LESSOR STARTS==================== -->
-  <div class="parallax" style="min-height: 500px; padding-top: 30px;padding-bottom: 20px; background-image: url(images/homepage/wall2.jpg);">
+  <div class="parallax" style="min-height: 500px;padding-bottom: 20px; background-image: url(images/homepage/wall2.jpg);">
     
     <div style="font-size: 35px; text-align: center;color: white" class="bg-primary">
       <!--What do you want to do ?-->
@@ -544,12 +505,14 @@
     </div>
   </div> -->
   <div class="parallax" style="background-image: url(images/homepage/wall1.jpg); color: white">
-    <div class="row destacados">
-    	<!--<p style="font-size: 35px" class="bg-primary">Need help ? Talk to our experts</p>-->
       <div style="font-size: 35px; text-align: center;color: white" class="bg-primary">
       <!--What do you want to do ?-->
        <p  class="large-devices-only typewrite" style="font-size: 35px;color: white;font-family: Georgia, serif" data-period="2000" data-type='[ " Need help ? Talk to our experts " ]'></p>
     </div>
+
+    <div class="row destacados">
+    	<!--<p style="font-size: 35px" class="bg-primary">Need help ? Talk to our experts</p>-->
+
       <div class="col-md-4">
           <div>
           <img src="images/homepage/adarsh.jpg" alt="Texto Alternativo" class="img-circle img-thumbnail">
