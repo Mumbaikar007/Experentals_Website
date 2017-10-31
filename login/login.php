@@ -166,7 +166,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="../finalindex.php">Home</a></li>
+            <li><a href="../finalindex.php">Home</a></li>
             <li><a href="../RentandLess/searchAnItem.php">Search An Item</a></li>
             <li><a href="../RentandLess/putAd.php">Rent An Item</a></li>
             <li class="dropdown">
@@ -185,15 +185,28 @@
           <ul class="nav navbar-nav navbar-right">
 
             <li><a href="../ChatSystem/thechat.php">Chat</a></li>
+            
             <?php
+
+           	if (!isset($_GET['open']))
+	  			$var = "login";
+		  	else
+		  		$var = $_GET['open'];
+	  	
 
 
 
             if  (!array_key_exists('sess_user',$_SESSION) && empty($_SESSION['sess_user'])){
               
-              echo '
-              <li><a href="../login/login.php?open=signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-              <li><a href="../login/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
+              
+              
+
+              if ( $var != "login")
+              	echo '<li class="active"><a href="../login/login.php?open=signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li><li><a href="../login/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
+              
+              else
+              	echo '<li><a href="../login/login.php?open=signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li><li class="active"	><a href="../login/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
+              
               
             }
 
@@ -242,10 +255,9 @@
 	  	<?php
 
 	  	if (!isset($_GET['open']))
-	  		$var = "login";
-	  	else
-	  		$var = $_GET['open'];
-	  	
+	  			$var = "login";
+		  	else
+		  		$var = $_GET['open'];
 
 	  	echo '
 	  	<ul class="nav nav-tabs nav-justified">';
