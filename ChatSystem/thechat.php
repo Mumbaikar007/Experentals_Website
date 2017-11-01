@@ -227,10 +227,10 @@ div.tab button.active {
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="../finalindex.php">Home</a></li>
+            <!--<li class="active"><a href="../finalindex.php">Home</a></li>-->
             <li><a href="../RentandLess/searchAnItem.php">Search An Item</a></li>
             <li><a href="../RentandLess/putAd.php">Rent An Item</a></li>
-            <li class="dropdown">
+            <!--<li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Power source and power management</a></li>
@@ -240,7 +240,7 @@ div.tab button.active {
                 <li><a href="#">Wearable Electronics</a></li>
                 
               </ul>
-            </li>
+            </li>-->
             
           </ul>
           <ul class="nav navbar-nav navbar-right">
