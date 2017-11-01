@@ -16,6 +16,8 @@
 <body style="background: radial-gradient(ellipse at center, rgb(17, 67, 96) 0%, rgb(17, 45, 68) 50%);">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
 <header >
   
     <nav class="navbar navbar-inverse">
@@ -202,20 +204,16 @@ a:hover, a:visited, a:link, a:active
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- ACCORDION*******************************************************ends-->
 
+<?php
+  echo '
+  <center>
+    <a href = "payment_in_prog.php?id='.$_GET['id'].'" >
+      <button class="btn btn-warning btn-lg" >Payment Done</button>
+    </a>
+  </center>';
+?>
 
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>

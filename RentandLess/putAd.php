@@ -152,7 +152,8 @@
 
 	<div style="background: radial-gradient(ellipse at center, rgb(17, 67, 96) 0%, rgb(17, 45, 68) 50%);">
 <div style=" margin-top: -20px;opacity: 0.9; padding-top: 50px ;padding-bottom: 30px; ">
-	<div style="padding: 30px 40px 20px 40px;max-width: 500px;margin: auto; min-width: 300px;	background-color: white; border-style: solid;border-width: 1px;>
+	<div style="padding: 30px 40px 20px 40px;max-width: 500px;margin: auto; min-width: 300px;	background-color: white; border-style: solid;border-width: 1px;">
+
 	<form id="form_input" action="includes/send.php" method="POST">
 		<table >
 			<tr>

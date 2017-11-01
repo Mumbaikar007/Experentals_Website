@@ -21,6 +21,16 @@
 </head>
 <body>
 
-			<p  class="large-devices-only typewrite" style="font-size: 35px;color: black;cursor: wait;font-family: Georgia, serif" data-period="2000" data-type='[ "Please Wait.Your Payment is in Progress.Do not click anywhere" ]'></p> 
+			<p  class="large-devices-only typewrite" style="font-size: 25px;color: black;cursor: wait;font-family: Georgia, serif; margin-top: 30px;" data-period="2000" data-type='[ "<center>Please Wait... <br>Your Payment is in Progress... <br>Do not click anywhere</center>" ]'></p>
+
+      <?php 
+        
+        sleep(15);
+
+        //header ("Location: ");
+
+       ?>
+
+
 </body>
-</html>
+</html>`

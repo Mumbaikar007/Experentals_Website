@@ -162,6 +162,7 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
 
+
             <li><a href="ChatSystem/thechat.php">Chat</a></li>
             <?php
 
@@ -177,6 +178,8 @@
 
             else {
               echo '
+              <li><a href="payment/toBuy.php">Payments</a></li>
+              <li><a href="payment/toGive.php">Allot</a></li>
               <li><a href="login/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li> ';
             }
 
@@ -201,8 +204,8 @@
     
     <div align="center" style=" background-size: 100%;min-height: 500px;padding-top: 0px;">
       
-      <img src="logonav.png" alt="ExpeRentals LOGO"><br />
-      <p style="color:white; font-size: 100px;font-family: Georgia, serif;"> Experentals</p><br />
+      <img src="logonav.png" alt="ExpeRentals LOGO" style="margin-top: 40px;margin-bottom: -30px;"><br />
+      <p style="color:white; font-size: 100px;font-family: Georgia, serif;margin-bottom: -30px;"> Experentals</p><br />
 
       <!--<p  class="large-devices-only typewrite" style="font-size: 100px;color: white;font-family: Georgia, serif" data-period="2000" data-type='[ "ExpeRentals" ]'></p>-->
 
