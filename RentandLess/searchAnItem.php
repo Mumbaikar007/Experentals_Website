@@ -54,6 +54,27 @@
         .space-ten{padding: 10px 0;}
 
 
+         .affix {
+		      top: 0;
+		      width: 100%;
+		      z-index: 9999 !important;
+		  }
+
+		  .affix + .container-fluid {
+		      padding-top: 70px;
+		  }
+
+		  .thumbnail{
+			    
+			    transition: 0.3s;
+			    
+			}
+			
+			.thumbnail:hover {
+			    box-shadow: 0 4px 8px 0 white;
+			}
+
+
 	</style>
 
 
@@ -153,15 +174,36 @@
 
 
 	  <!-- ============================ SEARCH BAR STARTS ========================= -->
-	  <center><img src="../images/logowb small.png" width="200px" height="100px" ></body></center><br />
-	  <div style="font-size: 40px;text-align: center; background-color: blue;color: white; opacity: 0.5">
-		
-		Search for an Item
+	  	<div class="container-fluid" style="background-image: url('images/background.jpg'); text-align: center;margin-top: -20px; min-height: 150px;">
+		  <h1 style="font-family: Arial, Helvetica, sans-serif;margin-top: 50px;color: white;
+          text-shadow: 2px 2px 4px #000000;font-size: 50px;">Search An Item</h1>
+		</div>
 
-	</div>
+		<nav class="navbar navbar-default" data-spy="affix" data-offset-top="205">
+		 	<div class="container">
+		 			
+		 		<div class="row" style="margin-top: 10px;">
+		 			
+		 			<div class="col-lg-4 col-xs-12">
+		 				Name:
+		 			</div>
 
-	 	
-	 		<div style="margin-top: 50px; opacity: 0.8 ">
+		 			<div class="col-lg-4 col-xs-12">
+		 				Category:
+		 			</div>
+
+		 			<div class="col-lg-4 col-xs-12">
+		 				Location:
+		 			</div>
+
+		 		</div>
+
+		 	</div> 
+		</nav>
+
+
+	 	<div style="background: radial-gradient(ellipse at center, rgb(17, 67, 96) 0%, rgb(17, 45, 68) 50%);">
+	 		<div style=" margin-top: -20px;opacity: 0.8; padding-top: 50px ;padding-bottom: 30px; ">
 	 		<div class="card" style="padding: 30px 40px 20px 40px;max-width: 500px;margin: auto; min-width: 300px;	background-color: white; border-style: solid;border-width: 1px;">
 	 			
 	 			<form action="searchAnItem.php" method = "POST" onsubmit="return validateForm()">
@@ -238,7 +280,7 @@
 
 
 	 	</div>
-
+	 
 	  <!-- ========================= SEARCH BAR ENDS ============================= -->
 
 	  	<br/>
@@ -247,7 +289,7 @@
 	  	
 
 
-	  	<div class="container">
+	  	<div class="container" style= "border: 15px solid orange; padding: 30px 10px 20px 10px;">
 	    <div class="row">
 	        
 	    	<?php
@@ -255,15 +297,18 @@
 				
 				$items =  get_items();
 						
-
-				if (isset($_POST['location'])){		
+				//echo "RES ". (empty($_POST['location'])) . " " . empty($_POST['category']). " " . empty($_POST['name']);
+ 
+				// ALL FIELDS
+				if ( !empty($_POST['location']) && !empty($_POST['category']) && !empty($_POST['name']) ){		
+					
 					foreach($items as $item){
 						
-						if ( $item['Location'] == $_POST['location']){
+						if ( $item['Location'] == $_POST['location'] && $item['Category'] == $_POST['category'] && $item['Title'] == $_POST['name']){
 
-			echo '<div class="col-md-4">
+					echo '<div class="col-md-4">
 		              <div class="thumbnail">
-		                <img src="http://tech.firstpost.com/wp-content/uploads/2014/09/Apple_iPhone6_Reuters.jpg" alt="" class="img-responsive">
+		                <img src="'.$item['Image'].'" alt="" class="img-responsive">
 		                <div class="caption">
 		                  <h4 class="pull-right">&#8377;' . $item['Price']. '</h4>
 		                  <h4><a href="#">' . $item['Title']. '</a></h4>
@@ -291,15 +336,87 @@
 					}
 				}
 
-		
-
-		
-		
-				else {
+				// NAME AND CATEGORY
+				else if ( !empty($_POST['name']) && !empty($_POST['category']) ){		
+					
 					foreach($items as $item){
-			echo '<div class="col-md-4">
+						
+						if ( $item['Title'] == $_POST['name'] && $item['Category'] == $_POST['category']){
+
+					echo '<div class="col-md-4">
 		              <div class="thumbnail">
-		                <img src="http://tech.firstpost.com/wp-content/uploads/2014/09/Apple_iPhone6_Reuters.jpg" alt="" class="img-responsive">
+		                <img src="'.$item['Image'].'" alt="" class="img-responsive">
+		                <div class="caption">
+		                  <h4 class="pull-right">&#8377;' . $item['Price']. '</h4>
+		                  <h4><a href="#">' . $item['Title']. '</a></h4>
+		                  <p>'. $item['Description']. '</p>
+		                </div>
+		                <div class="ratings">
+		                  <p style = "text-align: center;"><b>'. $item['RName'] .' 
+		                    from '. $item['Location'] .'
+		                  </b></p>
+		                </div>
+		                <div class="space-ten"></div>
+		                <div class="btn-ground text-center">
+		                    <a href="item.php?title='.$item['Title'].'&price='.$item['Price'].'&RName='.$item['RName'].'&location='.$item['Location'].'"> 
+		                    <button type="button" class="btn btn-primary">Buy Now</button>
+		                    </a>
+		                    
+		                </div>
+		                <div class="space-ten"></div>
+		              </div>
+		            </div>' ;
+
+							/*echo '<strong>'.$item['Title'].': <br></strong>';
+							echo $item['Description'].'<br><br>';*/
+						}
+					}
+				}
+
+				// LOCATION AND NAME
+				else if ( !empty($_POST['location']) && !empty($_POST['name']) ){		
+					
+					foreach($items as $item){
+						
+						if ( $item['Location'] == $_POST['location'] && $item['Title'] == $_POST['name']){
+
+					echo '<div class="col-md-4">
+		              <div class="thumbnail">
+		                <img src="'.$item['Image'].'" alt="" class="img-responsive">
+		                <div class="caption">
+		                  <h4 class="pull-right">&#8377;' . $item['Price']. '</h4>
+		                  <h4><a href="#">' . $item['Title']. '</a></h4>
+		                  <p>'. $item['Description']. '</p>
+		                </div>
+		                <div class="ratings">
+		                  <p style = "text-align: center;"><b>'. $item['RName'] .' 
+		                    from '. $item['Location'] .'
+		                  </b></p>
+		                </div>
+		                <div class="space-ten"></div>
+		                <div class="btn-ground text-center">
+		                    <a href="item.php?title='.$item['Title'].'&price='.$item['Price'].'&RName='.$item['RName'].'&location='.$item['Location'].'"> 
+		                    <button type="button" class="btn btn-primary">Buy Now</button>
+		                    </a>
+		                    
+		                </div>
+		                <div class="space-ten"></div>
+		              </div>
+		            </div>' ;
+
+							/*echo '<strong>'.$item['Title'].': <br></strong>';
+							echo $item['Description'].'<br><br>';*/
+						}
+					}
+				}
+
+				// OTHERWISE
+				else {
+				
+				foreach($items as $item){
+					echo '<div class="col-md-4">
+		              <div class="thumbnail">
+		                <img src="'.$item['Image'].'" alt="" class="img-responsive">
 		                <div class="caption">
 		                  <h4 class="pull-right">&#8377;' . $item['Price']. '</h4>
 		                  <h4><a href="#">' . $item['Title']. '</a></h4>
@@ -325,5 +442,6 @@
 								
 			?>
 
+		</div>
 </body>
 </html>

@@ -197,7 +197,7 @@
 
   <!-- ===================INTRODUCTION: LOGO AND MOTO STARTS==================== -->
   
-  <div class="parallax" style="background-image: url(images/homepage/background1.jpg);height: 600px;margin-top: -20px; ">
+  <div class="" style="background-image: url(images/homepage/background1.jpg);background-repeat: no-repeat;width: 100%;-webkit-background-size: cover;height: 600px;margin-top: -20px; ">
     
     <div align="center" style=" background-size: 100%;min-height: 500px;padding-top: 100px;">
       
@@ -219,57 +219,17 @@
   <!-- =====================INTRODUCTION ENDS========================= -->
 
 
-  <!-- =========================CHOICE: RENTER OR LESSOR STARTS==================== -->
-  <div class="parallax" style="min-height: 500px;padding-bottom: 20px; background-image: url(images/homepage/wall2.jpg);">
-    
-    <div style="font-size: 35px; text-align: center;color: white" class="bg-primary">
-      <!--What do you want to do ?-->
-       <p  class="large-devices-only typewrite" style="font-size: 35px;color: white;font-family: Georgia, serif" data-period="2000" data-type='[ "What do you want to do ?" ]'></p>
-    </div>
-
-    <div class="row" >
-
-      <div class="col-lg-4 col-xs-12 " style=" padding-top: 40px;text-align: right;">
-        
-        <a href="RentandLess/putAd.php">
-          <img class = "abc img-responsive mobile-only center" src="images/homepage/lessor.jpg" alt="RENTER" width="250px" height="250px" align="center" style="opacity: 0.6">
-        </a>
-        
-      </div>
-      
-      <div class="col-lg-4 col-xs-12" style="padding: 100px;">
-        
-        <div style="font-size: 100px; color: white"></div>
-        
-      </div> 
-
-      <div class="col-lg-4 col-xs-12" style="text-align: center; padding-top: 40px;">
-
-        <a href="RentandLess/searchAnItem.php">
-          <img class = "abc img-responsive center mobile-only" src="images/homepage/lessee.jpg" alt="LESSOR" width="250px" height="250px" align="center" style="opacity: 0.6">>
-        </a>
-
-
-      </div>
-
-    </div>
-  
-</div>
-  <!--</div>-->
-  <!-- ==========================CHOICE ENDS============================= -->
-
-
   <!-- ==========================HOW IT WORKS STARTS============================== -->
   
-  <div class="parallax" id = "cont" style="background-image: url(images/homepage/123.png); height: 400px;">
+  <div  id = "cont" style="height: 450px;background-color: #03a9f4;padding-top: 50px;">
 
   <!-- style="background-color: #03a9f4;min-height: 500px;padding: 30px 10px 20px 10px;" --> 
       
       <!--<p style="color: white;text-align: center;font-size: 35px;margin-bottom: 20px;" class="bg-primary"> How it works </p>-->
-      <div style="font-size: 35px; text-align: center;color: white" class="bg-primary">
-      <!--What do you want to do ?-->
-       <p  class="large-devices-only typewrite" style="font-size: 35px;color: white;font-family: Georgia, serif" data-period="2000" data-type='[ " How it works " ]'></p>
-    </div>
+      <div style="font-size: 35px; text-align: center;color: white;margin-bottom: 15px;">
+       How it Works ?
+      </div>    
+  
 
     
 <!--
@@ -289,7 +249,7 @@
                     
           <div id="hex3" class="hexagon-wrapper">
               <div id="color3" class="hexagon">
-              	<b >Need help getting started ?</b><br />This article explains what you need to know to start working on experentals</div>
+                <b >Need help getting started ?</b><br />This article explains what you need to know to start working on experentals</div>
           </div>
 
 
@@ -369,16 +329,60 @@
 
 <!--<div id="cont" class="container" style="   background-color:rgba(255, 255,0, 0.4);padding-bottom: 20px;"><br /><br /> -->
       <center>
-      <button class="circle-button">PUT UP AD<br/><h4>Renter puts up an ad for the devices he wishes to rent.</h4></button>&emsp;&emsp;
+        <button class="circle-button">PUT UP AD<br/><h4>Renter puts up an ad for the devices he wishes to rent.</h4></button>&emsp;&emsp;
           <button class="circle-button" >SEARCH<br /><h4>Lessors will search for devices.</h4></button>&emsp;&emsp;
           <button class="circle-button" >BID<br /><h4>Lessor will bid for devices he needs.</h4></button>&emsp;&emsp;
         <button class="circle-button" >CHAT<br /><h4>Where lessor will talk to the owner.</h4></button>&emsp;&emsp;
           <button class="circle-button" >PAYMENT<br /><h4>Once deal is done.</h4></button>
-          </center>
+      </center>
     </div>
 
 
   <!-- =======================HOW IT WORKS ENDS================================= -->
+
+
+
+
+
+  <!-- =========================CHOICE: RENTER OR LESSOR STARTS==================== -->
+  <div class="parallax" style="height: 450px;padding-bottom: 20px; background-image: url(images/homepage/wall2.jpg);">
+    
+    <div style="font-size: 35px; text-align: center;color: white" class="bg-primary">
+      <!--What do you want to do ?-->
+       <p  class="large-devices-only typewrite" style="font-size: 35px;color: white;font-family: Georgia, serif" data-period="2000" data-type='[ "What do you want to do ?" ]'></p>
+    </div>
+
+    <div class="row" >
+
+      <div class="col-lg-4 col-xs-12 " style=" padding-top: 40px;text-align: right;">
+        
+        <a href="RentandLess/putAd.php">
+          <img class = "abc img-responsive mobile-only center" src="images/homepage/lessor.jpg" alt="RENTER" width="250px" height="250px" align="center" style="opacity: 0.6">
+        </a>
+        
+      </div>
+      
+      <div class="col-lg-4 col-xs-12" style="padding: 100px;">
+        
+        <div style="font-size: 100px; color: white"></div>
+        
+      </div> 
+
+      <div class="col-lg-4 col-xs-12" style="text-align: center; padding-top: 40px;">
+
+        <a href="RentandLess/searchAnItem.php">
+          <img class = "abc img-responsive center mobile-only" src="images/homepage/lessee.jpg" alt="LESSOR" width="250px" height="250px" align="center" style="opacity: 0.6">>
+        </a>
+
+
+      </div>
+
+    </div>
+  
+</div>
+  <!--</div>-->
+  <!-- ==========================CHOICE ENDS============================= -->
+
 
   <!-- ==========================TOP RENTERS LESSOR STARTS============================== -->
     
