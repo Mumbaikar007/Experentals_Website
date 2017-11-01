@@ -199,7 +199,7 @@
   
   <div class="" style="background-image: url(images/homepage/background1.jpg);background-repeat: no-repeat;width: 100%;-webkit-background-size: cover;height: 600px;margin-top: -20px; ">
     
-    <div align="center" style=" background-size: 100%;min-height: 500px;padding-top: 20px;">
+    <div align="center" style=" background-size: 100%;min-height: 500px;padding-top: 0px;">
       
       <img src="logonav.png" alt="ExpeRentals LOGO"><br />
       <p style="color:white; font-size: 100px;font-family: Georgia, serif;"> Experentals</p><br />
