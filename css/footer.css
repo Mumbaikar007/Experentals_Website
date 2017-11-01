@@ -1,21 +1,24 @@
-.footerclass {
-    background-color: #3c3d41;
-	padding: 60px 10px 40px 50px;
-	color: white;
-}
 
 
-.footerclass a{
-	color: white;
-}
+	.footerclass {
+	    background-color: #3c3d41;
+		padding: 60px 10px 40px 50px;
+		color: white;
+	}
 
-.footerclass a:hover{
-		
-		text-decoration: none;
-}
 
-.right {
-	 border-right: thin double white;
+	.footerclass a{
+		color: white;
+	}
+
+	.footerclass a:hover{
+			
+			text-decoration: none;
+	}
+@media screen and (min-width: 1102px){
+	.right {
+		 border-right: thin double white;
+	}
 }
 
 @media screen and (max-width: 1101px){
