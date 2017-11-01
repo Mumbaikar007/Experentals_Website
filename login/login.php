@@ -88,7 +88,7 @@
 		    var password = document.signup.pass;
 		    var cpassword = document.signup.cpass;
 		    
-		    if (username.value == "" ){
+		    if (username.value.length == 0 ){
 		    	alert("UserName cannot be empty !!");
 		    	username.focus();
 		    	return false;
@@ -309,7 +309,7 @@
 				   <div class="checkbox" style="text-align: center;">
 				     <label><input type="checkbox"> Remember me</label>
 				   	 <br><br>
- 				   	 <input type = "submit" name = "submit" class="btn btn-primary btn-lg">
+ 				   	 <input type = "submit" name = "submit" class="btn btn-warning btn-lg">
  					</div>
  				</form>   	
 		    </div>';
@@ -323,7 +323,7 @@
 
 			echo '
 	    	
-		      <form name="myForm" action = "signupdb.php" method = "POST" name = "signup" onsubmit="return validateForm()">
+		      <form name="signup" action = "signupdb.php" method = "POST" name = "signup" onsubmit="return validateForm()">
 
 				   <div class="form-group">
 				     <label >Username:</label>
@@ -367,7 +367,7 @@
 
 
 				   <div class="checkbox" style="text-align: center;">
-				   	 <input type = "submit" name = "submit" class="btn btn-primary btn-lg">	
+				   	 <input type = "submit" name = "submit" class="btn btn-warning btn-lg">	
  				   </div>
 
  				   

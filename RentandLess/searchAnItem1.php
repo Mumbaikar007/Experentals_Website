@@ -54,6 +54,16 @@
         .space-ten{padding: 10px 0;}
 
 
+        .affix {
+		      top: 0;
+		      width: 100%;
+		      z-index: 9999 !important;
+		  }
+
+		  .affix + .container-fluid {
+		      padding-top: 70px;
+		  }
+
 	</style>
 
 
@@ -153,177 +163,40 @@
 
 
 	  <!-- ============================ SEARCH BAR STARTS ========================= -->
-	  <center><img src="../images/logowb small.png" width="200px" height="100px" ></body></center><br />
-	  <div style="font-size: 40px;text-align: center; background-color: blue;color: white; opacity: 0.5">
-		
-		Search for an Item
 
-	</div>
+	    <div class="container-fluid" style="background-image: url('images/background.jpg'); text-align: center;margin-top: -20px; min-height: 150px;">
+		  <h1 style="font-family: Arial, Helvetica, sans-serif;margin-top: 50px;color: white;
+          text-shadow: 2px 2px 4px #000000;font-size: 50px;">Search An Item</h1>
+		</div>
 
-	 	
-	 		<div style="margin-top: 50px; opacity: 0.8 ">
-	 		<div class="card" style="padding: 30px 40px 20px 40px;max-width: 500px;margin: auto; min-width: 300px;	background-color: white; border-style: solid;border-width: 1px;">
-	 			
-	 			<form action="searchAnItem.php" method = "POST" onsubmit="return validateForm()">
-	 		
-	 				<!--center><img src="logo.png"></center>-->
-	 				
-	 				<table align="center" style="font-size: 20px">
-		 				<!--<div class="col-lg-4 col-xs-12">-->
-		 					
+		<nav class="navbar navbar-default" data-spy="affix" data-offset-top="190">
+		 	<div class="container">
+		 			
+		 		<div class="row" style="margin-top: 10px;">
+		 			
+		 			<div class="col-lg-4 col-xs-12">
+		 				Name:
+		 			</div>
 
-		 					<tr>
-		 						<td><p class="glyphicon glyphicon-info-sign"></p>
-		 					Item Name&emsp;
-		 					<td>:</td>
-		 					<td><input type="text" name="name"></td>
-		 				</tr>
-		 				<tr>
-		 					<td><br /></td>
-		 				</tr>
+		 			<div class="col-lg-4 col-xs-12">
+		 				Category:
+		 			</div>
 
-		 				<!--<div class="col-lg-4 col-xs-12">-->
-		 					<tr><td><p class="	glyphicon glyphicon-th-list"></p>
-		 					Category&emsp;
-		 					<td>:</td>&emsp;
-		 					<td><input type="text" name="category"></td>
-		 					</tr>
+		 			<div class="col-lg-4 col-xs-12">
+		 				Location:
+		 			</div>
 
-		 				<tr>
-		 					<td><br /></td>
-		 				</tr>
+		 		</div>
+
+		 	</div> 
+		</nav>
 
 
-		 				<!--<div class="col-lg-4 col-xs-12">-->
-		 					<tr><td><p class="glyphicon glyphicon-map-marker"></p>
-		 					Location&emsp;
-		 					<td>:</td>&emsp;
-		 					<td><input type="text" name="location" ></td>
-		 				</tr>
-
-		 			<tr>
-		 					<td><br /></td>
-		 				</tr>
-
-		 			</table>
-		 				
-	 			
-	 			<br>
-	 			<center>
-	 			<!-- <a href="searchAnItem.php?hello=true&name=$name&location=true&location2=$location"> -->
-	 				<!-- <input type="button" name="test" id="test" value="RUN" /><br/> -->
-					<button type="submit" class="btn btn-info"><h4><span class="glyphicon glyphicon-search"></span> Search</h4></button>
-				<!-- </a> -->
-				</center>
 
 
-	 			</form>
 
+	  <!-- =============== SEARCH BAR ENDS ====================== -->
 
-	 			<br>
-
-				<?php
-
-				/*function testfun()
-				{
-				   echo "Your test function on button click is working";
-				}
-				if(array_key_exists('test',$_POST)){
-				   testfun();
-				}*/
-
-				?>
-
-	 		</div>
-
-
-	 	</div>
-
-	  <!-- ========================= SEARCH BAR ENDS ============================= -->
-
-	  	<br/>
-
-
-	  	
-
-
-	  	<div class="container">
-	    <div class="row">
-	        
-	    	<?php
-
-				
-				$items =  get_items();
-						
-
-				if (isset($_POST['location'])){		
-					foreach($items as $item){
-						
-						if ( $item['Location'] == $_POST['location']){
-
-			echo '<div class="col-md-4">
-		              <div class="thumbnail">
-		                <img src="http://tech.firstpost.com/wp-content/uploads/2014/09/Apple_iPhone6_Reuters.jpg" alt="" class="img-responsive">
-		                <div class="caption">
-		                  <h4 class="pull-right">&#8377;' . $item['Price']. '</h4>
-		                  <h4><a href="#">' . $item['Title']. '</a></h4>
-		                  <p>'. $item['Description']. '</p>
-		                </div>
-		                <div class="ratings">
-		                  <p style = "text-align: center;"><b>'. $item['RName'] .' 
-		                    from '. $item['Location'] .'
-		                  </b></p>
-		                </div>
-		                <div class="space-ten"></div>
-		                <div class="btn-ground text-center">
-		                    <a href="item.php?title='.$item['Title'].'&price='.$item['Price'].'&RName='.$item['RName'].'&location='.$item['Location'].'"> 
-		                    <button type="button" class="btn btn-primary">Buy Now</button>
-		                    </a>
-		                    
-		                </div>
-		                <div class="space-ten"></div>
-		              </div>
-		            </div>' ;
-
-							/*echo '<strong>'.$item['Title'].': <br></strong>';
-							echo $item['Description'].'<br><br>';*/
-						}
-					}
-				}
-
-		
-
-		
-		
-				else {
-					foreach($items as $item){
-			echo '<div class="col-md-4">
-		              <div class="thumbnail">
-		                <img src="http://tech.firstpost.com/wp-content/uploads/2014/09/Apple_iPhone6_Reuters.jpg" alt="" class="img-responsive">
-		                <div class="caption">
-		                  <h4 class="pull-right">&#8377;' . $item['Price']. '</h4>
-		                  <h4><a href="#">' . $item['Title']. '</a></h4>
-		                  <p>'. $item['Description']. '</p>
-		                </div>
-		                <div class="ratings">
-		                  <p style = "text-align: center;"><b>'. $item['RName'] .' 
-		                    from '. $item['Location'] .'
-		                  </b></p>
-		                </div>
-		                <div class="space-ten"></div>
-		                <div class="btn-ground text-center">
-		                    <a href="items/item.php?title='.$item['Title'].'&price='.$item['Price'].'&RName='.$item['RName'].'&location='.$item['Location'].'&Description='.$item['Description'].'"> 
-		                    <button type="button" class="btn btn-primary">Buy Now</button>
-		                    </a>
-		                </div>
-		                <div class="space-ten"></div>
-		              </div>
-		            </div>' ;
-					}
-				}
-		
-								
-			?>
 
 </body>
 </html>

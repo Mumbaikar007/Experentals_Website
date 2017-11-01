@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 25, 2017 at 06:33 PM
+-- Generation Time: Nov 01, 2017 at 06:30 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -53,8 +53,10 @@ CREATE TABLE `chatTo` (
 
 INSERT INTO `chatTo` (`name`, `other`) VALUES
 ('ABCD', 'a:1:{i:0;s:5:\"ABCDE\";}'),
-('ABCDE', 'a:3:{i:0;s:4:\"ABCD\";i:1;N;i:2;N;}'),
-('AAAA', 'a:0:{}');
+('ABCDE', 'a:2:{i:0;s:4:\"ABCD\";i:1;s:4:\"AAAA\";}'),
+('AAAA', 'a:1:{i:0;s:5:\"ABCDE\";}'),
+('ABAB', 'a:0:{}'),
+('ABAB', 'a:0:{}');
 
 -- --------------------------------------------------------
 
@@ -73,9 +75,10 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`pid`, `username`, `password`) VALUES
-(11, 'AAAA', '1111'),
-(9, 'ABCD', '1234'),
-(10, 'ABCDE', '12345'),
+(19, 'AAAA', '1111'),
+(17, 'ABCD', '1234'),
+(18, 'ABCDE', '12345'),
+(20, 'ABAB', 'Aa!1Bb@2'),
 (1, 'adarsh', 'adarsh'),
 (2, 'Pradnya_Pradhan', 'pradnya');
 
@@ -138,7 +141,8 @@ INSERT INTO `rent` (`pid`, `rent_id`, `title`, `category`, `description`, `image
 (1, 4, 'Rasp0', 'IOT', 'Microcontroller', 'bitmap', 2000, 2, 'Mumbai', 'ABCDE'),
 (1, 5, 'Rasp1', 'IOT', 'Microcontroller', 'bitmap', 2500, 2, 'Mumbai', 'adarsh'),
 (1, 6, 'Rasp2', 'IOT', 'Microcontroller', 'bitmap', 2500, 2, 'Borivali', 'adarsh'),
-(1, 7, 'Rasp3', 'IOT', 'Microcontroller', 'bitmap', 2500, 2, 'Andheri', 'AAAA');
+(1, 12, 'Arduino', 'IOT', 'Micro controller', '', 250, 0, 'Andheri', 'ABCDE'),
+(1, 13, 'ESP', 'IOT', 'MICROCONTROLLER', 'images/background.jpg', 150, 0, 'Andheri', '');
 
 -- --------------------------------------------------------
 
@@ -218,7 +222,7 @@ ALTER TABLE `bid`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `payment`
 --
@@ -233,7 +237,7 @@ ALTER TABLE `profile`
 -- AUTO_INCREMENT for table `rent`
 --
 ALTER TABLE `rent`
-  MODIFY `rent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `rent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `search`
 --
