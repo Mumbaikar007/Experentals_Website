@@ -147,21 +147,11 @@
             <li class="active"><a href="finalindex.php">Home</a></li>
             <li><a href="RentandLess/searchAnItem.php">Search An Item</a></li>
             <li><a href="RentandLess/putAd.php">Rent An Item</a></li>
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Power source and power management</a></li>
-                <li><a href="#">Sensors</a></li>
-                <li><a href="#">Actuators</a></li>
-                <li><a href="#">Processor and memory storage</a></li>
-                <li><a href="#">Wearable Electronics</a></li>
-                
-              </ul>
-            </li>
+            
             
           </ul>
           <ul class="nav navbar-nav navbar-right">
-
+            <li><a href="payment/toBuy.php">Pay</a></li>
             <li><a href="ChatSystem/thechat.php">Chat</a></li>
             <?php
 

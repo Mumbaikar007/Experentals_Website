@@ -9,17 +9,6 @@
 
 ?>
 
-<?php
-
-  require ('includes/send.php');
-  session_start();
-
-  if  (!array_key_exists('sess_user',$_SESSION) && empty($_SESSION['sess_user']))
-    header("location: ../login/login.php");
-
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -116,7 +105,7 @@
 
   	<?php  
 
-        session_start();
+        
         $_SESSION['talkto'] = $_GET['RName'];
   	   	
       echo '

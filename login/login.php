@@ -242,8 +242,6 @@
 		"  -->
 	</div>
 	
-	<div style="margin-top: 1" >
-	</div>
 	
 	<div style="opacity: 0.7;"><!-- background-image: url(123.png); border-width: 1px;border-style: solid; -->
 
