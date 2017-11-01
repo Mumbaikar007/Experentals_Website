@@ -150,7 +150,7 @@
 <body style="background: radial-gradient(ellipse at center, rgb(17, 67, 96) 0%, rgb(17, 45, 68) 50%);">
 
 
-  <!-- =========================HEADER==================================== -->
+ <!-- =========================HEADER==================================== -->
   <header >
   
     <nav class="navbar navbar-inverse">
@@ -166,7 +166,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <!--<li><a href="../finalindex.php">Home</a></li>-->
+            <!--<li class="active"><a href="finalindex.php">Home</a></li>-->
             <li><a href="../RentandLess/searchAnItem.php">Search An Item</a></li>
             <li><a href="../RentandLess/putAd.php">Rent An Item</a></li>
             <!--<li class="dropdown">
@@ -184,34 +184,24 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
 
-            <li><a href="../ChatSystem/thechat.php">Chat</a></li>
-            
-            <?php
 
-           	if (!isset($_GET['open']))
-	  			$var = "login";
-		  	else
-		  		$var = $_GET['open'];
-	  	
+            <li><a href="../ChatSystem/thechat.php">Chat</a></li>
+            <?php
 
 
 
             if  (!array_key_exists('sess_user',$_SESSION) && empty($_SESSION['sess_user'])){
               
-              
-              
-
-              if ( $var != "login")
-              	echo '<li class="active"><a href="../login/login.php?open=signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li><li><a href="../login/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
-              
-              else
-              	echo '<li><a href="../login/login.php?open=signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li><li class="active"	><a href="../login/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
-              
+              echo '
+              <li><a href="../login/login.php?open=signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a href="../login/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
               
             }
 
             else {
               echo '
+              <li><a href="../payment/toBuy.php">Payments</a></li>
+              <li><a href="../payment/toGive.php">Allot</a></li>
               <li><a href="../login/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li> ';
             }
 

@@ -70,7 +70,8 @@
 	</style>
 
 	<body style="background: radial-gradient(ellipse at center, rgb(17, 67, 96) 0%, rgb(17, 45, 68) 50%);">	
-		  <header >
+ <!-- =========================HEADER==================================== -->
+  <header >
   
     <nav class="navbar navbar-inverse">
       <div class="container">
@@ -80,14 +81,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
           </button>
-         <a class="navbar-brand" href="finalindex.php">ExpeRentals</a>
+         <a class="navbar-brand" href="../finalindex.php">ExpeRentals</a>
          
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
             <!--<li class="active"><a href="finalindex.php">Home</a></li>-->
-            <li><a href="RentandLess/searchAnItem.php">Search An Item</a></li>
-            <li><a href="RentandLess/putAd.php">Rent An Item</a></li>
+            <li><a href="../RentandLess/searchAnItem.php">Search An Item</a></li>
+            <li><a href="../RentandLess/putAd.php">Rent An Item</a></li>
             <!--<li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -103,7 +104,8 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
 
-            <li><a href="ChatSystem/thechat.php">Chat</a></li>
+
+            <li><a href="../ChatSystem/thechat.php">Chat</a></li>
             <?php
 
 
@@ -111,14 +113,16 @@
             if  (!array_key_exists('sess_user',$_SESSION) && empty($_SESSION['sess_user'])){
               
               echo '
-              <li><a href="login/login.php?open=signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-              <li><a href="login/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
+              <li><a href="../login/login.php?open=signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a href="../login/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
               
             }
 
             else {
               echo '
-              <li><a href="login/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li> ';
+              <li><a href="../payment/toBuy.php">Payments</a></li>
+              <li><a href="../payment/toGive.php">Allot</a></li>
+              <li><a href="../login/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li> ';
             }
 
             ?>
@@ -130,6 +134,8 @@
 
 
   </header>
+  <!-- ================================HEADER ENDS============================ -->
+
 		<div class="container" style="padding-top: 100px">
 		<h1 style="color: white">Your Payment has been successfully done ! </h1><br />
 		<a href="finalindex.php"><button class="btn btn-warning">Continue with experentals</button></a>

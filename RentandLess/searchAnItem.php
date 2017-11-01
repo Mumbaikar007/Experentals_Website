@@ -75,7 +75,7 @@
 		  }
 
 		  .thumbnail{
-			    
+			    height: 450px;
 			    transition: 0.3s;
 			    
 			}
@@ -118,7 +118,7 @@
 <body >
 		
 		
-  <!-- =========================HEADER==================================== -->
+ <!-- =========================HEADER==================================== -->
   <header >
   
     <nav class="navbar navbar-inverse">
@@ -134,7 +134,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <!--<li class="active"><a href="../finalindex.php">Home</a></li>-->
+            <!--<li class="active"><a href="finalindex.php">Home</a></li>-->
             <li><a href="../RentandLess/searchAnItem.php">Search An Item</a></li>
             <li><a href="../RentandLess/putAd.php">Rent An Item</a></li>
             <!--<li class="dropdown">
@@ -152,6 +152,7 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
 
+
             <li><a href="../ChatSystem/thechat.php">Chat</a></li>
             <?php
 
@@ -167,6 +168,8 @@
 
             else {
               echo '
+              <li><a href="../payment/toBuy.php">Payments</a></li>
+              <li><a href="../payment/toGive.php">Allot</a></li>
               <li><a href="../login/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li> ';
             }
 
@@ -311,14 +314,14 @@
  
 				// ALL FIELDS
 				if ( !empty($_POST['location']) && !empty($_POST['category']) && !empty($_POST['name']) ){		
-					
+					echo "1";
 					foreach($items as $item){
 						
 						if ( $item['Location'] == $_POST['location'] && $item['Category'] == $_POST['category'] && $item['Title'] == $_POST['name']){
 
 					echo '<div class="col-md-4">
 		              <div class="thumbnail">
-		                <img src="'.$item['Image'].'" alt="" class="img-responsive">
+		                <img src="'.$item['Image'].'" alt="" class="img-responsive" style = "width: 500px; height: 250px;">
 		                <div class="caption">
 		                  <h4 class="pull-right">&#8377;' . $item['Price']. '</h4>
 		                  <h4><a href="#">' . $item['Title']. '</a></h4>
@@ -348,14 +351,15 @@
 
 				// NAME AND CATEGORY
 				else if ( !empty($_POST['name']) && !empty($_POST['category']) ){		
-					
+					echo "2";
 					foreach($items as $item){
 						
+
 						if ( $item['Title'] == $_POST['name'] && $item['Category'] == $_POST['category']){
 
 					echo '<div class="col-md-4">
 		              <div class="thumbnail">
-		                <img src="'.$item['Image'].'" alt="" class="img-responsive">
+		                <img src="'.$item['Image'].'" alt="" class="img-responsive" style = "width: 500px; height: 250px;">
 		                <div class="caption">
 		                  <h4 class="pull-right">&#8377;' . $item['Price']. '</h4>
 		                  <h4><a href="#">' . $item['Title']. '</a></h4>
@@ -385,14 +389,14 @@
 
 				// LOCATION AND NAME
 				else if ( !empty($_POST['location']) && !empty($_POST['name']) ){		
-					
+					echo "3";
 					foreach($items as $item){
 						
 						if ( $item['Location'] == $_POST['location'] && $item['Title'] == $_POST['name']){
 
 					echo '<div class="col-md-4">
 		              <div class="thumbnail">
-		                <img src="'.$item['Image'].'" alt="" class="img-responsive">
+		                <img src="'.$item['Image'].'" alt="" class="img-responsive" style = "width: 500px; height: 250px;">
 		                <div class="caption">
 		                  <h4 class="pull-right">&#8377;' . $item['Price']. '</h4>
 		                  <h4><a href="#">' . $item['Title']. '</a></h4>
@@ -422,11 +426,11 @@
 
 				// OTHERWISE
 				else {
-				
+				echo "4";
 				foreach($items as $item){
 					echo '<div class="col-md-4">
 		              <div class="thumbnail">
-		                <img src="'.$item['Image'].'" alt="" class="img-responsive">
+		                <img src="'.$item['Image'].'" alt="" class="img-responsive" style = "width: 500px; height: 250px;">
 		                <div class="caption">
 		                  <h4 class="pull-right">&#8377;' . $item['Price']. '</h4>
 		                  <h4><a href="#">' . $item['Title']. '</a></h4>

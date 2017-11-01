@@ -70,7 +70,8 @@
 	</style>
 
 	<body style="background: radial-gradient(ellipse at center, rgb(17, 67, 96) 0%, rgb(17, 45, 68) 50%);">	
-		  <header >
+		  <!-- =========================HEADER==================================== -->
+  <header >
   
     <nav class="navbar navbar-inverse">
       <div class="container">
@@ -103,6 +104,7 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
 
+
             <li><a href="ChatSystem/thechat.php">Chat</a></li>
             <?php
 
@@ -118,6 +120,8 @@
 
             else {
               echo '
+              <li><a href="payment/toBuy.php">Payments</a></li>
+              <li><a href="payment/toGive.php">Allot</a></li>
               <li><a href="login/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li> ';
             }
 
@@ -130,6 +134,8 @@
 
 
   </header>
+  <!-- ================================HEADER ENDS============================ -->
+
 		<div class="container" style="padding-top: 100px">
 		<h1 style="color: white">You have successfully rented your item !</h1><br />
 		<a href="finalindex.php"><button class="btn btn-warning">Continue with experentals</button></a>

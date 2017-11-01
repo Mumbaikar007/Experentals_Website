@@ -1,4 +1,4 @@
-<?php 
+	<?php 
 	
 	session_start();
 	
@@ -45,7 +45,7 @@
 	    $query = "UPDATE `rent` SET `lessor`= '".$username."' WHERE `rent_id` = '".$rentid."'" ;
 
 	    if ( $run = mysqli_query($con,$query)){
-			header("Location: ../toGive.php?done=A");
+			header("Location: toGive.php?done=A");
 		}
 		else {
 			//echo "string";

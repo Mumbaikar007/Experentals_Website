@@ -17,8 +17,8 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-
-<header >
+ <!-- =========================HEADER==================================== -->
+  <header >
   
     <nav class="navbar navbar-inverse">
       <div class="container">
@@ -33,7 +33,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <!--<li class="active"><a href="../finalindex.php">Home</a></li>-->
+            <!--<li class="active"><a href="finalindex.php">Home</a></li>-->
             <li><a href="../RentandLess/searchAnItem.php">Search An Item</a></li>
             <li><a href="../RentandLess/putAd.php">Rent An Item</a></li>
             <!--<li class="dropdown">
@@ -51,12 +51,13 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
 
+
             <li><a href="../ChatSystem/thechat.php">Chat</a></li>
             <?php
 
 
 
-            if  (empty($_SESSION['sess_user'])){
+            if  (!array_key_exists('sess_user',$_SESSION) && empty($_SESSION['sess_user'])){
               
               echo '
               <li><a href="../login/login.php?open=signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -66,6 +67,8 @@
 
             else {
               echo '
+              <li><a href="../payment/toBuy.php">Payments</a></li>
+              <li><a href="../payment/toGive.php">Allot</a></li>
               <li><a href="../login/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li> ';
             }
 
@@ -78,6 +81,8 @@
 
 
   </header>
+  <!-- ================================HEADER ENDS============================ -->
+
 <!-- ACCORDION*******************************************************starts-->
 
 

@@ -1,4 +1,4 @@
-<?php
+ <?php
 	
   require ('includes/send.php');
   
@@ -67,7 +67,7 @@
 <body>
 		
 
-  <!-- =========================HEADER==================================== -->
+ <!-- =========================HEADER==================================== -->
   <header >
   
     <nav class="navbar navbar-inverse">
@@ -83,7 +83,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <!--<li class="active"><a href="../finalindex.php">Home</a></li>-->
+            <!--<li class="active"><a href="finalindex.php">Home</a></li>-->
             <li><a href="../RentandLess/searchAnItem.php">Search An Item</a></li>
             <li><a href="../RentandLess/putAd.php">Rent An Item</a></li>
             <!--<li class="dropdown">
@@ -101,6 +101,7 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
 
+
             <li><a href="../ChatSystem/thechat.php">Chat</a></li>
             <?php
 
@@ -116,6 +117,8 @@
 
             else {
               echo '
+              <li><a href="../payment/toBuy.php">Payments</a></li>
+              <li><a href="../payment/toGive.php">Allot</a></li>
               <li><a href="../login/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li> ';
             }
 
@@ -188,7 +191,7 @@
 
 			<tr>
 				<td>  <p class="glyphicon  glyphicon-piggy-bank"></p>&nbsp;Price (Monthly ) &emsp;</td>
-				<td> <input type="text" id="price" name="price" placeholder="Enter the price" required=""></td>
+				<td> <input type="text" id="price" name="price" placeholder="Enter Price" required=""></td>
 			</tr>
 			<tr>
 		 		<td><br /></td>
@@ -196,7 +199,7 @@
 
 			<tr>
 				<td> <p class="glyphicon glyphicon-map-marker "></p>&nbsp;Location </td>
-				<td> <input type="text" id="price" name="location" placeholder="Enter price" required=""> </td>
+				<td> <input type="text" id="price" name="location" placeholder="Enter Location" required=""> </td>
 			</tr>
 			<tr>
 		 		<td><br /></td>
