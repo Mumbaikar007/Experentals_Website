@@ -1,4 +1,4 @@
-<?php
+<!--<?php
 
 	require ('includes/receive.php');
 	//echo "index.php";
@@ -13,6 +13,16 @@
 			echo 'Message failed';
 		}
 	}*/
+?>-->
+<?php
+	
+  require ('includes/send.php');
+  
+
+  if  (!array_key_exists('sess_user',$_SESSION) && empty($_SESSION['sess_user']))
+    header("location: ../login/login.php");
+
+
 ?>
 
 
@@ -124,10 +134,10 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="../finalindex.php">Home</a></li>
+            <!--<li class="active"><a href="../finalindex.php">Home</a></li>-->
             <li><a href="../RentandLess/searchAnItem.php">Search An Item</a></li>
             <li><a href="../RentandLess/putAd.php">Rent An Item</a></li>
-            <li class="dropdown">
+            <!--<li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Power source and power management</a></li>
@@ -137,7 +147,7 @@
                 <li><a href="#">Wearable Electronics</a></li>
                 
               </ul>
-            </li>
+            </li>-->
             
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -147,7 +157,7 @@
 
 
 
-            if  (empty($_SESSION['sess_user'])){
+            if  (!array_key_exists('sess_user',$_SESSION) && empty($_SESSION['sess_user'])){
               
               echo '
               <li><a href="../login/login.php?open=signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -178,7 +188,7 @@
 		  <h1 style="font-family: Arial, Helvetica, sans-serif;margin-top: 50px;color: white;
           text-shadow: 2px 2px 4px #000000;font-size: 50px;">Search An Item</h1>
 		</div>
-
+		<!--
 		<nav class="navbar navbar-default" data-spy="affix" data-offset-top="205">
 		 	<div class="container">
 		 			
@@ -199,11 +209,11 @@
 		 		</div>
 
 		 	</div> 
-		</nav>
+		</nav>-->
 
 
 	 	<div style="background: radial-gradient(ellipse at center, rgb(17, 67, 96) 0%, rgb(17, 45, 68) 50%);">
-	 		<div style=" margin-top: -20px;opacity: 0.8; padding-top: 50px ;padding-bottom: 30px; ">
+	 		<div style=" margin-top: -20px;opacity: 0.9; padding-top: 50px ;padding-bottom: 30px; ">
 	 		<div class="card" style="padding: 30px 40px 20px 40px;max-width: 500px;margin: auto; min-width: 300px;	background-color: white; border-style: solid;border-width: 1px;">
 	 			
 	 			<form action="searchAnItem.php" method = "POST" onsubmit="return validateForm()">
@@ -289,7 +299,7 @@
 	  	
 
 
-	  	<div class="container" style= "border: 15px solid orange; padding: 30px 10px 20px 10px;">
+	  	<div class="container">
 	    <div class="row">
 	        
 	    	<?php

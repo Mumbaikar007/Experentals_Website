@@ -144,10 +144,10 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="finalindex.php">Home</a></li>
+            <!--<li class="active"><a href="finalindex.php">Home</a></li>-->
             <li><a href="RentandLess/searchAnItem.php">Search An Item</a></li>
             <li><a href="RentandLess/putAd.php">Rent An Item</a></li>
-            <li class="dropdown">
+            <!--<li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Power source and power management</a></li>
@@ -157,7 +157,7 @@
                 <li><a href="#">Wearable Electronics</a></li>
                 
               </ul>
-            </li>
+            </li>-->
             
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -199,14 +199,15 @@
   
   <div class="" style="background-image: url(images/homepage/background1.jpg);background-repeat: no-repeat;width: 100%;-webkit-background-size: cover;height: 600px;margin-top: -20px; ">
     
-    <div align="center" style=" background-size: 100%;min-height: 500px;padding-top: 100px;">
+    <div align="center" style=" background-size: 100%;min-height: 500px;padding-top: 0px;">
       
-      <!-- <img src="" alt="ExpeRentals LOGO"> -->
+      <img src="logonav.png" alt="ExpeRentals LOGO"><br />
       <p style="color:white; font-size: 100px;font-family: Georgia, serif;"> Experentals</p><br />
 
       <!--<p  class="large-devices-only typewrite" style="font-size: 100px;color: white;font-family: Georgia, serif" data-period="2000" data-type='[ "ExpeRentals" ]'></p>-->
 
      <p  class="large-devices-only typewrite" style="font-size: 50px;color: white;font-family: Georgia, serif" data-period="2000" data-type='[ "Rentals for Experiments" ]'></p>
+     <p style="color: white;font-size: 20px">We provide low cost availability of equipments for sharing of electronics and hardware<br /> among people.Our system bridges those with surplus electronic equipments to those who require them</p>
 
      <!-- <p style="color:white; font-size: 30px;font-family: Georgia, serif;"> Rentals for Experiments</p><br />-->
       <!-- <p style="color: white;font-size: 18px;">We facilitie low cost availability of equipments for sharing of electronics and hardware among people.<br />Our system bridges those with surplus electronic equipments to those who require them.</p> -->
@@ -328,12 +329,12 @@
 -
 
 <!--<div id="cont" class="container" style="   background-color:rgba(255, 255,0, 0.4);padding-bottom: 20px;"><br /><br /> -->
-      <center>
-        <button class="circle-button">PUT UP AD<br/><h4>Renter puts up an ad for the devices he wishes to rent.</h4></button>&emsp;&emsp;
-          <button class="circle-button" >SEARCH<br /><h4>Lessors will search for devices.</h4></button>&emsp;&emsp;
-          <button class="circle-button" >BID<br /><h4>Lessor will bid for devices he needs.</h4></button>&emsp;&emsp;
-        <button class="circle-button" >CHAT<br /><h4>Where lessor will talk to the owner.</h4></button>&emsp;&emsp;
-          <button class="circle-button" >PAYMENT<br /><h4>Once deal is done.</h4></button>
+      <center style="font-size: 20px">
+        <a href="RentandLess/putAd.php"><button class="circle-button"><u>Step.1</u><br />Put up Ad<br/><h4>Renter puts up an ad for the devices.</h4></button></a>&emsp;&emsp;
+          <a href="RentandLess/searchAnItem.php"><button class="circle-button" ><u>Step.2</u><br />Search<br /><h4>Lessors will search for devices.</h4></button></a>&emsp;&emsp;
+          <button class="circle-button" ><u>Step.3</u><br />Bid<br /><h4>Lessor will bid for devices he needs.</h4></button></a>&emsp;&emsp;
+        <a href="ChatSystem/thechat.php"><button class="circle-button" ><u>Step.4</u><br />Chat<br /><h4>Where lessor will talk to the owner.</h4></button></a>&emsp;&emsp;
+          <a href="payment/payment.php"><button class="circle-button" ><u>Step.5</u><br />Payment<br /><h4>Once deal is done,proceed to pay</h4></button></a>
       </center>
     </div>
 
@@ -522,7 +523,16 @@
           <img src="images/homepage/adarsh.jpg" alt="Texto Alternativo" class="img-circle img-thumbnail">
           <h2>Adarsh Pai</h2>
           <p>Co-founder,EXPERENTALS.<br />Specialist in Machine Learning</p>
-          <a href="#" class="btn btn-primary" title="Enlace">Contact now</a>
+          <!--<a href="#" class="btn btn-primary" title="Enlace">Contact now >></a>-->
+<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Contact now
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu" >
+      <li><a href="#">Call: 09167846868</a></li>
+      <li><a href="#">Email: paiadarsh.a@gmail.com</a></li>
+     
+    </ul>
+
+
         </div>
       </div>
 
@@ -531,7 +541,14 @@
           <img src="images/homepage/aditi.jpg" alt="Texto Alternativo" class="img-circle img-thumbnail" >
           <h2>Aditi Pawaskar</h2>
           <p>Co-founder,EXPERENTALS.<br />Specialist in Artificial Intelligence</p>
-          <a href="#" class="btn btn-primary" title="Enlace">Contact now</a>
+          <!--<a href="#" class="btn btn-primary" title="Enlace">Contact now >></a>-->
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Contact now
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu" style="align-content: right">
+      <li><a href="#">Call: 07045211359</a></li>
+      <li><a href="#">Email: aditipawaskar97@gmail.com</a></li>
+     
+    </ul>
         </div>
       </div>
 
@@ -541,7 +558,14 @@
           
           <h2>Pranav Puranik</h2>
           <p><p>Co-founder,EXPERENTALS.<br />Specialist in Internet of Things</p>
-          <a href="#" class="btn btn-primary" title="Enlace">Contact now</a>
+          <!--<a href="#" class="btn btn-primary" title="Enlace">Contact now >></a>-->
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Contact now
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu" >
+      <li><a href="#">Call: 07045884009</a></li>
+      <li><a href="#">Email: brainteaser97@gmail.com</a></li>
+     
+    </ul>
         </div>
       </div>
     </div>
@@ -564,15 +588,17 @@
               <h4 >Quick Links</h4>
               <div class="col-md-6">
                     <ul class="pages">
-                        <li><a href="#">Lessor</a></li>
+                        <!--<li><a href="#">Lessor</a></li>
                         <li><a href="#">Lessee</a></li>
                         <li><a href="#">Login</a></li>
-                        <li><a href="#">SignUp</a></li>
-                        <li><a href="#">History</a></li>
+                        <li><a href="#">SignUp</a></li>-->
+                        <li><a href="login/login.php?open=signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li><br />
+              <li><a href="login/login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        <!--<li><a href="#">History</a></li>-->
                     </ul>
                 </div>
               <div class="col-md-6">
-                    <ul class="list">
+                    <ul class="list" >
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Contacts</a></li>
                         <li><a href="#">Terms & Condition</a></li>

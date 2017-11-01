@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html >
 <head>
   <meta charset="UTF-8">
@@ -12,22 +12,13 @@
   
 </head>
 
+
 <body style="background: radial-gradient(ellipse at center, rgb(17, 67, 96) 0%, rgb(17, 45, 68) 50%);">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-<!-- ACCORDION*******************************************************starts-->
-
-
-
-<style type="text/css">
-a:hover, a:visited, a:link, a:active
-{
-    text-decoration: none;
-}
-</style>
-
-<nav class="navbar navbar-inverse">
+<header >
+  
+    <nav class="navbar navbar-inverse">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -82,6 +73,21 @@ a:hover, a:visited, a:link, a:active
         </div>
       </div>
     </nav>
+
+
+  </header>
+<!-- ACCORDION*******************************************************starts-->
+
+
+
+<style type="text/css">
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+</style>
+
+
 
 <div class="container" style="text-align: center;">
   <h1 style="color: white">Pay Invoice</h1>

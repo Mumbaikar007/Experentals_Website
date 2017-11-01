@@ -166,10 +166,10 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li><a href="../finalindex.php">Home</a></li>
+            <!--<li><a href="../finalindex.php">Home</a></li>-->
             <li><a href="../RentandLess/searchAnItem.php">Search An Item</a></li>
             <li><a href="../RentandLess/putAd.php">Rent An Item</a></li>
-            <li class="dropdown">
+            <!--<li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Power source and power management</a></li>
@@ -179,7 +179,7 @@
                 <li><a href="#">Wearable Electronics</a></li>
                 
               </ul>
-            </li>
+            </li>-->
             
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -234,18 +234,19 @@
 
 
 
-	<div style="text-align: center; color: white; font-family: Georgia, serif;font-size: 60px;margin-top: 70px;">
+	<div style="text-align: center; color: white; font-family: Georgia, serif;font-size: 20px;margin-top: 10px;">
+		<img src="logonav.png"><br />
 
-		<b>Experentals.</b>
+		<b>Experentals</b>
 
 		<!-- <img src="../images/logowb small.png" width="200px" height="100px" > --><!-- style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 		"  -->
-	</div>
+	</div><br />
 	
 	<div style="margin-top: 1" >
 	</div>
 	
-	<div style="opacity: 0.7;"><!-- background-image: url(123.png); border-width: 1px;border-style: solid; -->
+	<div style="opacity: 0.9;"><!-- background-image: url(123.png); border-width: 1px;border-style: solid; -->
 
 	<div class="card" style="padding: 10px 10px 10px 10px;max-width: 500px;margin: auto; min-width: 300px;	background-color: white;">
 	
@@ -309,7 +310,7 @@
 				   <div class="checkbox" style="text-align: center;">
 				     <label><input type="checkbox"> Remember me</label>
 				   	 <br><br>
- 				   	 <input type = "submit" name = "submit" class="btn btn-warning btn-lg">
+ 				   	 <input type = "submit" value="Login" name = "submit" class="btn btn-warning btn-lg">
  					</div>
  				</form>   	
 		    </div>';
@@ -367,7 +368,7 @@
 
 
 				   <div class="checkbox" style="text-align: center;">
-				   	 <input type = "submit" name = "submit" class="btn btn-warning btn-lg">	
+				   	 <input type = "submit" value="SignUp" name = "submit" class="btn btn-warning btn-lg">	
  				   </div>
 
  				   

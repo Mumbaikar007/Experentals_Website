@@ -83,10 +83,10 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="../finalindex.php">Home</a></li>
+            <!--<li class="active"><a href="../finalindex.php">Home</a></li>-->
             <li><a href="../RentandLess/searchAnItem.php">Search An Item</a></li>
             <li><a href="../RentandLess/putAd.php">Rent An Item</a></li>
-            <li class="dropdown">
+            <!--<li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Category <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Power source and power management</a></li>
@@ -96,7 +96,7 @@
                 <li><a href="#">Wearable Electronics</a></li>
                 
               </ul>
-            </li>
+            </li>-->
             
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -132,13 +132,17 @@
 
 
 	<!-- ====================== FORM ======================== -->
-<center><img src="../images/logowb small.png" width="200px" height="100px" ></body></center><br />
-	<div style="font-size: 40px;text-align: center; background-color: blue;color: white; opacity: 0.5">
+<!--<center><img src="../images/logowb small.png" width="200px" height="100px" ></body></center><br />-->
+	<!--<div style="font-size: 40px;text-align: center; background-color: blue;color: white; opacity: 0.5">
 		
 		Rent an Item
 
 
-	</div>
+	</div>-->
+		<div class="container-fluid" style="background-image: url('images/background.jpg'); text-align: center;margin-top: -20px; min-height: 150px;">
+		  <h1 style="font-family: Arial, Helvetica, sans-serif;margin-top: 50px;color: white;
+          text-shadow: 2px 2px 4px #000000;font-size: 50px;">Rent An Item</h1>
+		</div>
 
 	<style type="text/css">
 		tr{
@@ -146,9 +150,9 @@
 		}
 	</style>
 
-	<div style="margin-top: 50px; background-image: url(123.png); opacity: 0.8 ">
-
-	<div style="padding: 30px 40px 20px 40px;max-width: 500px;margin: auto; min-width: 300px;	background-color: white; border-style: solid;border-width: 1px;">
+	<div style="background: radial-gradient(ellipse at center, rgb(17, 67, 96) 0%, rgb(17, 45, 68) 50%);">
+<div style=" margin-top: -20px;opacity: 0.9; padding-top: 50px ;padding-bottom: 30px; ">
+	<div style="padding: 30px 40px 20px 40px;max-width: 500px;margin: auto; min-width: 300px;	background-color: white; border-style: solid;border-width: 1px;>
 	<form id="form_input" action="includes/send.php" method="POST">
 		<table >
 			<tr>
