@@ -18,7 +18,7 @@
 		    $query = "INSERT INTO `escrow`.`rent`(pid, title, category, description, image, price, location, renter_name) VALUES ( ".$_SESSION['user_pid'].", '".$_POST['title']."', '".$_POST['category']."', '".$_POST['description']."', 'images/".$_POST['img']."','".$_POST['price']."', '".$_POST['location']."', '".$_SESSION['sess_user']."')" ;
   
 		    if ( $run = mysqli_query($con,$query)){
-				header("Location: ../	../done.php");
+				header("Location: ../../done.php");
 			}
 			else {
 				echo "string";

@@ -30,11 +30,21 @@
 
   <style type="text/css">
 
+    .thumbnail{
+          height: 450px;
+          transition: 0.3s;
+          
+      }
+      
+      .thumbnail:hover {
+          box-shadow: 0 4px 8px 0 white;
+      }
+
 
   </style>
 
 </head>
-<body>
+<body style="background: radial-gradient(ellipse at center, rgb(17, 67, 96) 0%, rgb(17, 45, 68) 50%);">
 
  <!-- =========================HEADER==================================== -->
   <header >
@@ -116,7 +126,7 @@
   		<div class ="col-lg-4" style="text-align:center;">
 			<div class="card__one">
 	      <div class="thumbnail">
-	        <img src="http://tech.firstpost.com/wp-content/uploads/2014/09/Apple_iPhone6_Reuters.jpg" alt="" class="img-responsive">
+	        <img src="../'.$_GET['image'].'" alt="" class="img-responsive" style = "width: 500px; height: 250px;">
 	        <div class="caption">
 	          <h4 class="pull-right">&#8377;' . $_GET['price']. '</h4>
 	          <h4 class = "pull-left"><a href="#">' . $_GET['title']. '</a></h4>

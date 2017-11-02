@@ -55,7 +55,7 @@
             <li><a href="../ChatSystem/thechat.php">Chat</a></li>
             <?php
 
-
+            session_start();
 
             if  (!array_key_exists('sess_user',$_SESSION) && empty($_SESSION['sess_user'])){
               

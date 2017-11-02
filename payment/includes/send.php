@@ -34,7 +34,7 @@
 
 	}
 
-	function updateDB( $username, $rentid ){
+	function updateDB( $username, $rentid, $title ){
 
 	    $con=mysqli_connect('localhost','root','') or die(mysqli_error());  
 	    mysqli_select_db($con, 'escrow') or die("cannot select DB");  
@@ -45,7 +45,7 @@
 	    $query = "UPDATE `rent` SET `lessor`= '".$username."' WHERE `rent_id` = '".$rentid."'" ;
 
 	    if ( $run = mysqli_query($con,$query)){
-			header("Location: toGive.php?done=A");
+			header("Location: toGive.php?done=".$username."&title=".$title." ");
 		}
 		else {
 			//echo "string";

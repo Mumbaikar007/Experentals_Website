@@ -1,4 +1,4 @@
-<!--<?php
+	<!--<?php
 
 	require ('includes/receive.php');
 	//echo "index.php";
@@ -334,7 +334,7 @@
 		                </div>
 		                <div class="space-ten"></div>
 		                <div class="btn-ground text-center">
-		                    <a href="item.php?title='.$item['Title'].'&price='.$item['Price'].'&RName='.$item['RName'].'&location='.$item['Location'].'"> 
+		                    <a href="items/item.php?title='.$item['Title'].'&price='.$item['Price'].'&RName='.$item['RName'].'&location='.$item['Location'].'"> 
 		                    <button type="button" class="btn btn-primary">Buy Now</button>
 		                    </a>
 		                    
@@ -372,7 +372,7 @@
 		                </div>
 		                <div class="space-ten"></div>
 		                <div class="btn-ground text-center">
-		                    <a href="item.php?title='.$item['Title'].'&price='.$item['Price'].'&RName='.$item['RName'].'&location='.$item['Location'].'"> 
+		                    <a href="items/item.php?title='.$item['Title'].'&price='.$item['Price'].'&RName='.$item['RName'].'&location='.$item['Location'].'"> 
 		                    <button type="button" class="btn btn-primary">Buy Now</button>
 		                    </a>
 		                    
@@ -409,7 +409,7 @@
 		                </div>
 		                <div class="space-ten"></div>
 		                <div class="btn-ground text-center">
-		                    <a href="item.php?title='.$item['Title'].'&price='.$item['Price'].'&RName='.$item['RName'].'&location='.$item['Location'].'"> 
+		                    <a href="items/item.php?title='.$item['Title'].'&price='.$item['Price'].'&RName='.$item['RName'].'&location='.$item['Location'].'"> 
 		                    <button type="button" class="btn btn-primary">Buy Now</button>
 		                    </a>
 		                    
@@ -443,7 +443,7 @@
 		                </div>
 		                <div class="space-ten"></div>
 		                <div class="btn-ground text-center">
-		                    <a href="items/item.php?title='.$item['Title'].'&price='.$item['Price'].'&RName='.$item['RName'].'&location='.$item['Location'].'&Description='.$item['Description'].'"> 
+		                    <a href="items/item.php?title='.$item['Title'].'&price='.$item['Price'].'&RName='.$item['RName'].'&location='.$item['Location'].'&Description='.$item['Description'].'&image='.$item['Image'].'"> 
 		                    <button type="button" class="btn btn-primary">Buy Now</button>
 		                    </a>
 		                </div>

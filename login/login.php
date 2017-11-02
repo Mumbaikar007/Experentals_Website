@@ -367,7 +367,18 @@
 		';
 		?>
 
-		<hr>
+
+		<?php
+
+			if (isset($_GET['signup'])){
+
+				echo '<script>alert("Hello '.$_GET['signup'].' !!  Please Login ...")</script>';
+
+			}
+
+
+		?>
+
 		
 	</div>
 	</div>

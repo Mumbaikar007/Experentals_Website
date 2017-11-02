@@ -36,10 +36,10 @@
         //echo $array."<br>";
         $neverTalked = 1;
         foreach ($array as $i) {
-          echo var_dump($i);
+          //echo var_dump($i);
 
           if ( $i == $_GET['talkto']){  
-            echo " - never";
+            //echo " - never";
             $neverTalked = 0;
 
           }
@@ -55,7 +55,7 @@
         $array = serialize($array);
         $array2 = serialize($array2);
         
-        echo $array2;
+        //echo $array2;
         
 
         $query=mysqli_query($con ,"UPDATE chatTo SET other='".$array."' WHERE name='".$_SESSION['sess_user']."'");
@@ -78,11 +78,11 @@
     //echo "1<br>";
     if (send_msg( $_SESSION['sess_user'], $_GET['talkto'], $_GET['message'] ) )
     {
-      echo 'Message Sent';
+      //echo 'Message Sent';
 
     }
     else{
-      echo 'Message failed';
+      //echo 'Message failed';
     }
   }
 ?>

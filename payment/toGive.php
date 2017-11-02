@@ -7,7 +7,7 @@
 
 if(isset($_POST['send'])) {
     //echo "1<br>";
-    if (updateDB( $_POST['lessor'], $_POST['id']  ) )
+    if (updateDB( $_POST['lessor'], $_POST['id'], $_POST['title']  ) )
     {
       echo 'Message Sent';
 
@@ -186,6 +186,8 @@ if(isset($_POST['send'])) {
 	    						<td>
 	    							<input name = "lessor" type = "text" value='.$pay['Lessor'].'>
 	    							<input name = "id" type = "text" style="display:none" value = "'.$pay['RentId'].'">
+	    							<input name = "title" type = "text" style="display:none" value = "'.$pay['Title'].'">
+
 	    						</td>
 	    						<td>
 	    							 <input type = "submit" name = "send" class = "btn btn-warning">
@@ -209,5 +211,13 @@ if(isset($_POST['send'])) {
 		<!-- ========== TABLE END ============ -->
 
 
-	</body>
-	</html>
+		<?php
+
+			if (isset($_GET['done'])){
+				echo '<p style = "color:lightgreen; text-align: center;margin-top: 10px;">Allotted '.$_GET['title'].' to '. $_GET['done']. '</p>';
+			}
+
+		?>
+
+</body>
+</html>
