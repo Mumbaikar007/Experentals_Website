@@ -31,7 +31,7 @@
   <style type="text/css">
 
     .thumbnail{
-          height: 450px;
+          height: 475px;
           transition: 0.3s;
           
       }
@@ -112,7 +112,7 @@
   </header>
   <!-- ================================HEADER ENDS============================ -->
 
-  <div class="container-fluid" style="text-align: center;margin-top: 100px;">
+  <div class="container-fluid" style="text-align: center;margin-top: 80px;">
   	
 
 
@@ -142,6 +142,14 @@
           <div>
             <a href="../../ChatSystem/thechat.php?talkto='.$_GET['RName'].'&login='.$_SESSION['sess_user'].'">
             <button type="button" class="btn btn-primary btn-block">Chat with '. $_GET['RName'].'</button>
+            </a>
+          </div>
+
+          <br>
+
+          <div>
+            <a href="../../Bid/placeBid2.php?itemname='.$_GET['title'].'&rentername='.$_GET['RName'].'">
+            <button type="button" class="btn btn-primary btn-block">Bid now!</button>
             </a>
           </div>
 

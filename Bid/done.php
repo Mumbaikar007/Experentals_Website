@@ -70,7 +70,7 @@
 	</style>
 
 	<body style="background: radial-gradient(ellipse at center, rgb(17, 67, 96) 0%, rgb(17, 45, 68) 50%);">	
- <!-- =========================HEADER==================================== -->
+		  <!-- =========================HEADER==================================== -->
   <header >
   
     <nav class="navbar navbar-inverse">
@@ -137,7 +137,8 @@
   <!-- ================================HEADER ENDS============================ -->
 
 		<div class="container" style="padding-top: 100px">
-		<h1 style="color: white">Your Payment has been successfully done ! </h1><br />
+		<h1 style="color: white">You have successfully placed your bid.</h1><br />
 		<a href="../finalindex.php"><button class="btn btn-warning">Continue with experentals</button></a>
+</div>
 	</body>
 </html>
