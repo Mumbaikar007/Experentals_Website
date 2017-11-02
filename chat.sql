@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 25, 2017 at 06:33 PM
+-- Generation Time: Nov 02, 2017 at 03:41 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -40,11 +40,9 @@ CREATE TABLE `chat` (
 --
 
 INSERT INTO `chat` (`Msg_ID`, `Sender`, `Receiver`, `Message`) VALUES
-(23, 'ABCD', 'ABCDE', 'Hey i neel your Rasp Pi'),
-(24, 'ABCD', 'ABCDE', 'I am ready to pay 1500/-'),
-(25, 'ABCDE', 'ABCD', 'Okk'),
-(26, 'ABCD', 'ABCDE', 'I am ready to pay 1500/-'),
-(27, 'ABCD', 'ABCDE', 'aaye');
+(3, 'Pranav', 'Adarsh ', 'Yuooo '),
+(4, 'Adarsh ', 'Pranav', 'le le l e'),
+(5, 'Pranav', 'Adarsh ', 'de de');
 
 -- --------------------------------------------------------
 
@@ -75,7 +73,7 @@ ALTER TABLE `chat`
 -- AUTO_INCREMENT for table `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `Msg_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;COMMIT;
+  MODIFY `Msg_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 01, 2017 at 06:30 AM
+-- Generation Time: Nov 02, 2017 at 03:41 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -29,12 +29,24 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `bid` (
-  `pid` int(30) NOT NULL,
-  `rent_id` int(30) NOT NULL,
+  `bidd` int(30) NOT NULL,
+  `renter` int(30) NOT NULL,
+  `bidder_id` int(100) NOT NULL,
+  `renter_id` int(100) NOT NULL,
   `bid_id` int(11) NOT NULL,
   `price` int(30) NOT NULL,
-  `urgency` time NOT NULL
+  `ItemName` text NOT NULL,
+  `BidderName` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bid`
+--
+
+INSERT INTO `bid` (`bidd`, `renter`, `bidder_id`, `renter_id`, `bid_id`, `price`, `ItemName`, `BidderName`) VALUES
+(3, 3, 4, 4, 39, 86, 'Arduino', 'Pranav'),
+(3, 3, 4, 4, 40, 123, 'Arduino', 'Pranav'),
+(3, 3, 4, 3, 41, 123, 'Protable Pi', 'Pranav');
 
 -- --------------------------------------------------------
 
@@ -52,11 +64,11 @@ CREATE TABLE `chatTo` (
 --
 
 INSERT INTO `chatTo` (`name`, `other`) VALUES
-('ABCD', 'a:1:{i:0;s:5:\"ABCDE\";}'),
-('ABCDE', 'a:2:{i:0;s:4:\"ABCD\";i:1;s:4:\"AAAA\";}'),
-('AAAA', 'a:1:{i:0;s:5:\"ABCDE\";}'),
-('ABAB', 'a:0:{}'),
-('ABAB', 'a:0:{}');
+('Adarsh ', 'a:1:{i:0;s:6:\"Pranav\";}'),
+('Pranav', 'a:1:{i:0;s:7:\"Adarsh \";}'),
+('abcdefg', 'a:0:{}'),
+('abcdefw', 'a:0:{}'),
+('aaaaaa', 'a:0:{}');
 
 -- --------------------------------------------------------
 
@@ -75,12 +87,11 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`pid`, `username`, `password`) VALUES
-(19, 'AAAA', '1111'),
-(17, 'ABCD', '1234'),
-(18, 'ABCDE', '12345'),
-(20, 'ABAB', 'Aa!1Bb@2'),
-(1, 'adarsh', 'adarsh'),
-(2, 'Pradnya_Pradhan', 'pradnya');
+(3, 'Adarsh ', 'Aa!1Bb@2'),
+(4, 'Pranav', 'Aa!1Bb@2'),
+(7, 'aaaaaa', 'abcd12#'),
+(5, 'abcdefg', 'abcdefg1@'),
+(6, 'abcdefw', 'abcdefgh1@');
 
 -- --------------------------------------------------------
 
@@ -130,19 +141,16 @@ CREATE TABLE `rent` (
   `price` int(30) NOT NULL,
   `avail_bids` int(30) NOT NULL,
   `location` varchar(15) NOT NULL,
-  `renter_name` varchar(20) NOT NULL
+  `renter_name` varchar(20) NOT NULL,
+  `lessor` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `rent`
 --
 
-INSERT INTO `rent` (`pid`, `rent_id`, `title`, `category`, `description`, `image`, `price`, `avail_bids`, `location`, `renter_name`) VALUES
-(1, 4, 'Rasp0', 'IOT', 'Microcontroller', 'bitmap', 2000, 2, 'Mumbai', 'ABCDE'),
-(1, 5, 'Rasp1', 'IOT', 'Microcontroller', 'bitmap', 2500, 2, 'Mumbai', 'adarsh'),
-(1, 6, 'Rasp2', 'IOT', 'Microcontroller', 'bitmap', 2500, 2, 'Borivali', 'adarsh'),
-(1, 12, 'Arduino', 'IOT', 'Micro controller', '', 250, 0, 'Andheri', 'ABCDE'),
-(1, 13, 'ESP', 'IOT', 'MICROCONTROLLER', 'images/background.jpg', 150, 0, 'Andheri', '');
+INSERT INTO `rent` (`pid`, `rent_id`, `title`, `category`, `description`, `image`, `price`, `avail_bids`, `location`, `renter_name`, `lessor`) VALUES
+(4, 3, 'Arduino', 'IOT', 'asf', 'images/Raspbeerry.jpg', 250, 0, 'Borivali', 'Pranav', 'Pranav');
 
 -- --------------------------------------------------------
 
@@ -165,8 +173,8 @@ CREATE TABLE `search` (
 --
 ALTER TABLE `bid`
   ADD PRIMARY KEY (`bid_id`),
-  ADD KEY `rent_id` (`rent_id`),
-  ADD KEY `pid` (`pid`);
+  ADD KEY `rent_id` (`renter`),
+  ADD KEY `pid` (`bidd`);
 
 --
 -- Indexes for table `login`
@@ -217,12 +225,12 @@ ALTER TABLE `search`
 -- AUTO_INCREMENT for table `bid`
 --
 ALTER TABLE `bid`
-  MODIFY `bid_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `bid_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `payment`
 --
@@ -237,7 +245,7 @@ ALTER TABLE `profile`
 -- AUTO_INCREMENT for table `rent`
 --
 ALTER TABLE `rent`
-  MODIFY `rent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `rent_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `search`
 --
@@ -251,8 +259,8 @@ ALTER TABLE `search`
 -- Constraints for table `bid`
 --
 ALTER TABLE `bid`
-  ADD CONSTRAINT `bid_ibfk_1` FOREIGN KEY (`rent_id`) REFERENCES `rent` (`rent_id`),
-  ADD CONSTRAINT `bid_ibfk_2` FOREIGN KEY (`pid`) REFERENCES `login` (`pid`);
+  ADD CONSTRAINT `bid_ibfk_1` FOREIGN KEY (`renter`) REFERENCES `rent` (`rent_id`),
+  ADD CONSTRAINT `bid_ibfk_2` FOREIGN KEY (`bidd`) REFERENCES `login` (`pid`);
 
 --
 -- Constraints for table `payment`
